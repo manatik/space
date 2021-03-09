@@ -1,7 +1,9 @@
+import {useState} from "react";
 
 
 const useHamburger = () => {
     // это тело хука, тут можно писать его логику, получение даных, хранить информацию и все что угодно
+    const [openedBurgerMenu, setOpenedBurgerMenu] = useState(false)
     const routes = [
         {
             id: 1,
@@ -21,6 +23,8 @@ const useHamburger = () => {
     ]
 
     return {
+        openedBurgerMenu,
+        setOpenedBurgerMenu,
         routes
     }
 }

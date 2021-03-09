@@ -1,17 +1,11 @@
 .main {
   background: url("../../Img/Lesson/backgroundLesson.png") no-repeat left top / cover;
-  height: 100vh;
-
-  .hamburger {
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column;
-  }
 
   .lesson {
     display: flex;
     justify-content: center;
-
+    height: 100vh;
+    align-items: center;
 
     .backLesson {
       display: flex;
@@ -22,6 +16,7 @@
       width: 40%;
       padding: 20px 0 20px 0;
 
+
       .caption {
         font-size: 18px;
         color: white;
@@ -30,6 +25,7 @@
       .star {
         width: 60px;
       }
+
       .stars {
 
       }

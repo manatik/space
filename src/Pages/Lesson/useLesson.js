@@ -13,11 +13,25 @@ const useLesson = () => {
     const objectLesson = [
         {
             id: 1,
-            numberLesson: 7,
+            numberLesson: 1,
             stars: stars,
             imgLesson: zat,
             themeLesson: "Жожоба жумайсынба"
         },
+        {
+            id: 2,
+            numberLesson: 2,
+            stars: stars,
+            imgLesson: zat,
+            themeLesson: "Жожоба жумайсынба"
+        },
+        {
+            id: 2,
+            numberLesson: 2,
+            stars: stars,
+            imgLesson: zat,
+            themeLesson: "Жожоба жумайсынба"
+        }
 
     ]
     return {

@@ -1,4 +1,3 @@
-import './App.css';
 import React from 'react';
 import Router from "./Routing/Router";
 import {ContextProvider} from "./Pages/ContextProvider/Context";
