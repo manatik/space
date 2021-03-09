@@ -1,0 +1,42 @@
+.main {
+  background: url("../../Img/Exercise/backgroundExercise.png") no-repeat left top / cover;
+  height: 100vh;
+}
+
+  .exercise {
+    display: grid;
+    grid-template-areas: "words sentence dialogs";
+    grid-template-columns: 4fr 1fr 4fr;
+    margin-top: 200px;
+
+    .words {
+      grid-area: words;
+      margin-top: 100px;
+    }
+    .sentence {
+      grid-area: sentence;
+      margin-top: -100px;
+    }
+    .dialogs {
+      grid-area: dialogs;
+      margin-top: 100px;
+    }
+    .link {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      text-decoration: none;
+      color: white;
+      font-size: 40px;
+    }
+    .img {
+      margin-bottom: 20px;
+      width: 200px;
+    }
+    .textField {
+      background-color: #27536B;
+      padding: 10px 30px;
+      border-radius: 30px;
+    }
+  }
+

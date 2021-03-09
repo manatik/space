@@ -1,0 +1,47 @@
+.main {
+  background: url("../../Img/MainPage/backgroundMainPageProgram.png")no-repeat left bottom / cover;
+  height: 100vh;
+}
+
+.caption {
+  text-align: center;
+  color: white;
+  font-size: 60px;
+  padding-top: 2%;
+}
+
+.section {
+  display: grid;
+  grid-template-areas: "list1 listText1";
+  grid-template-columns: 6fr 6fr;
+  margin: 10% 15% 0 15%;
+}
+.li:first-child {
+  margin-top: 0;
+}
+.li {
+  background: #8DC2F2;
+  border-radius: 30px;
+  font-size: 30px;
+  width: 400px;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  margin-top: 7%;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+}
+.liActive {
+  background: #3d6986;
+}
+.list {
+  grid-area: list1;
+}
+
+.listText {
+  grid-area: listText1;
+  background: #8287F2;
+  border-radius: 68px;
+  padding: 30px;
+  text-align: center;
+}
