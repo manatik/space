@@ -7,13 +7,14 @@ import useLesson from "./useLesson";
 
 const Lesson = () => {
     const {objectLesson} = useLesson()
+
     return (
         <>
             <div className={styles.main}>
                 <Hamburger/>
-                {_.map(objectLesson, (less) =>
-                    <div key={less.id} className={styles.lesson}>
-                        <div className={styles.backLesson}>
+                <div className={styles.lesson}>
+                    {_.map(objectLesson, (less) =>
+                        <div key={less.id} className={styles.backLesson}>
                             <h1 className={styles.caption}>Урок #{less.numberLesson}</h1>
                             <div className={styles.stars}>
                                 {less.stars}
@@ -23,9 +24,8 @@ const Lesson = () => {
                             </NavLink>
                             <h1 className={styles.captionTheme}>{less.themeLesson}</h1>
                         </div>
-                    </div>
-                )}
-
+                    )}
+                </div>
             </div>
         </>
     )

@@ -17,6 +17,26 @@ const useHamburger = () => {
         },
         {
             id: 3,
+            name: 'Elementary',
+            to : '/lesson'
+        },
+        {
+            id: 4,
+            name: 'Intermediate',
+            to : '/lesson'
+        },
+        {
+            id: 5,
+            name: 'Pre-Intermediate',
+            to : '/lesson'
+        },
+        {
+            id: 6,
+            name: 'Upper-Intermediate',
+            to : '/lesson'
+        },
+        {
+            id: 7,
             name: 'О нас',
             to : '/about'
         },

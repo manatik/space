@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import stylesHeader from "./Header.module.scss";
 import logo from "../Img/logo.svg";
 import _ from "lodash";
@@ -10,6 +10,8 @@ const Header = () => {
     const {routes} = useHeader()
     const {RegistrationModal} = useContextProvider()
     const {setIsModal} = RegistrationModal
+
+
     return (
         <div className={stylesHeader.headerDiv}>
             <div className={stylesHeader.header}>
@@ -21,7 +23,7 @@ const Header = () => {
                     {_.map(routes, (route) => <NavLink key={route.id} className={stylesHeader.link} to={route.to}>{route.name}</NavLink>)}
                 </div>
                 <div>
-                    <NavLink className={stylesHeader.enter} to={"/"} onClick={()=>setIsModal(true)}>
+                    <NavLink className={stylesHeader.enter} to={'/'} onClick={()=>setIsModal(true)}>
                         Регистрация
                         <img className={stylesHeader.userImg} src={user} alt={'user'}/>
                     </NavLink>

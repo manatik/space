@@ -19,7 +19,6 @@ const Hamburger = () => {
       <div className={style.main}>
         <div className={style.buttonWrapper}>
           <div
-            id="nav-icon4"
             className={cn(style.navIcon4, openedBurgerMenu && style.open)}
             onClick={() => setOpenedBurgerMenu(!openedBurgerMenu)}
           >

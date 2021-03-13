@@ -22,12 +22,14 @@
     height: 80px;
     border-radius: 10px;
     background: #141414;
+    cursor: pointer;
   }
 
   .txtLogoHeader {
     grid-area: txtLogo;
     font-size: 48px;
     font-weight: bold;
+    cursor: pointer;
   }
 
   .link {
