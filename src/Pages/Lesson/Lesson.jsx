@@ -1,9 +1,12 @@
+// packages
 import React from 'react'
-import styles from './Lesson.module.scss'
 import {NavLink} from "react-router-dom";
-import Hamburger from "../../Header/Hamburger/Hamburger";
 import _ from 'lodash'
+// components
+import Hamburger from "../../Header/Hamburger/Hamburger";
 import useLesson from "./useLesson";
+// styles
+import styles from './Lesson.module.scss'
 
 const Lesson = () => {
     const {objectLesson} = useLesson()

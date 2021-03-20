@@ -1,8 +1,11 @@
+// packages
 import React from 'react'
-import styles from './MainPageProgram.module.scss'
 import cn from 'classnames'
-import useMainPage from "./useMainPage";
 import _ from 'lodash'
+// components
+import useMainPage from "./useMainPage";
+// styles
+import styles from './MainPageProgram.module.scss'
 
 const MainPageProgram = () => {
 

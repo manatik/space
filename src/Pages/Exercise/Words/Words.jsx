@@ -1,8 +1,11 @@
+// packages
 import React from 'react'
-import Hamburger from "../../../Header/Hamburger/Hamburger";
-import style from "./Words.module.scss"
-import useWords from "./useWords";
 import _ from 'lodash'
+// components
+import Hamburger from "../../../Header/Hamburger/Hamburger";
+import useWords from "./useWords";
+// styles
+import style from "./Words.module.scss"
 
 const Words = () => {
     const {objectWords} = useWords() || {}

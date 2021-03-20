@@ -1,18 +1,31 @@
+// packages
 import React from 'react'
-import styles from './MainPage.module.scss'
-import joda from "../../Img/MainPage/joda.png";
+import {NavLink} from "react-router-dom";
+//components
 import Header from "../../Header/Header";
 import MainPageProgram from "./MainPageProgram";
-import {NavLink} from "react-router-dom";
-import RegistrationModalWindow from "../RegistrationModalWindow/RegistrationModalWindow";
 import {useContextProvider} from "../ContextProvider/Context";
+import RegistrationModal from "../../Modals/RegistrationModal/RegistrationModal";
+import Modal from "../../Modals/Modal";
+import LoginModal from "../../Modals/LoginModal/LoginModal";
+// styles
+import styles from './MainPage.module.scss'
+// pictures
+import joda from "../../Img/MainPage/joda.png";
 
-// Называй компоненты с большой буквы, важное правило
+
 const MainPage = () => {
-    // а хуки и прочие js файлы с маленькой
-    // хук с логикой компонента
-    const {RegistrationModal} = useContextProvider()
-    const {isModal, setIsModal} = RegistrationModal
+    const {
+        registrationModal: {
+            isModalReg,
+            setIsModalReg
+        } = {},
+        loginModal: {
+            isModalLogin,
+            setIsModalLogin
+        } = {}
+    } = useContextProvider() || {}
+
     return (
         <>
             <div className={styles.mainPage}>
@@ -21,19 +34,31 @@ const MainPage = () => {
                     <div className={styles.offer}>
                         <p>Приложение, созданное для наиболее легкого и простого изучения англиского языка</p>
                         <div style={{marginTop: '30px'}}>
-                            <NavLink className={styles.btn} to={"/"} onClick={() => setIsModal(true)}>Начать
-                                обучение</NavLink>
+                            <NavLink className={styles.btn}
+                                     to={"/"}
+                                     onClick={() => setIsModalReg(true)}
+                            >
+                                Начать обучение
+                            </NavLink>
                         </div>
                     </div>
                     <img className={styles.jodaMainPage} src={joda} alt={"joda"}/>
                 </div>
             </div>
             <MainPageProgram/>
-            {isModal && <><RegistrationModalWindow/></>}
+
+            {isModalReg &&
+            <Modal isOpen={isModalReg} isClose={setIsModalReg}>
+                <RegistrationModal/>
+            </Modal>}
+
+            {isModalLogin &&
+            <Modal isOpen={isModalLogin} isClose={setIsModalLogin}>
+                <LoginModal/>
+            </Modal>}
         </>
     )
 }
-
 export default MainPage
 
 // TODO: для форм используй final-form или formik

@@ -1,10 +1,13 @@
+// packages
 import React from 'react'
-import style from './Exercise.module.scss'
 import {NavLink} from "react-router-dom";
+// components
+import Hamburger from "../../Header/Hamburger/Hamburger";
+// styles
+import style from './Exercise.module.scss'
+// pictures
 import word from '../../Img/Exercise/imgWords.png'
 import sen from '../../Img/Exercise/imgSentence.png'
-import dialog from '../../Img/Exercise/imgDialogs.png'
-import Hamburger from "../../Header/Hamburger/Hamburger";
 
 
 const Exercise = () => {
@@ -23,12 +26,6 @@ const Exercise = () => {
                         <NavLink className={style.link} to={'/sentence'}>
                             <img className={style.img} src={sen} alt={'logo book'}/>
                             <p className={style.textField}>Предложения</p>
-                        </NavLink>
-                    </div>
-                    <div className={style.dialogs}>
-                        <NavLink className={style.link} to={'/dialog'}>
-                            <img className={style.img} src={dialog} alt={'logo book'}/>
-                            <p className={style.textField}>Диалог</p>
                         </NavLink>
                     </div>
                 </div>

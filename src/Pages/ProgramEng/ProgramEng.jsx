@@ -1,7 +1,10 @@
+// packages
 import React from "react";
-import styles from "./ProgramEng.module.scss"
 import {NavLink} from "react-router-dom";
+// components
 import Hamburger from "../../Header/Hamburger/Hamburger";
+// styles
+import styles from "./ProgramEng.module.scss"
 
 const ProgramEng = () => {
 

@@ -1,7 +1,12 @@
+// packages
 import React from "react";
+// components
 import Header from "../../Header/Header";
+// styles
 import style from './About.module.scss'
+// pictures
 import offerImg from '../../Img/joda.png'
+
 const About = () => {
 
     return (

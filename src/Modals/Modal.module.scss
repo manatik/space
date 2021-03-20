@@ -1,0 +1,90 @@
+.main {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.modal {
+  background: #FFF4F4 url("../Img/Modal/backModal.png")no-repeat center / cover;
+  background-size: 100%;
+  border-radius: 15px;
+  height: 750px;
+  width: 500px;
+  margin: 5% auto;
+}
+
+.band {
+  height: 90px;
+  background-color: #2E05A3;
+  border-radius: 13px 13px 0 0;
+
+}
+.modalImg {
+  position: fixed;
+  z-index: 3;
+  width: 250px;
+  margin: -140px 0 0 115px;
+}
+
+.close {
+  cursor: pointer;
+  font-size: 30px;
+  float: right;
+  padding: 5px 15px 0 0;
+}
+
+.inputs {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 25%;
+}
+
+.input {
+  width: 400px;
+  height: 30px;
+  background: rgba(196, 196, 196, 0.5);
+  padding: 10px 0 10px 20px ;
+  font-size: 20px;
+  outline: none;
+  border: none;
+}
+
+.btn {
+  margin-top: 10px;
+  background: #4700ff;
+  width: 300px;
+  height: 50px;
+  font-size: 25px;
+  color: white;
+  outline: none;
+}
+
+.txtEnter {
+  margin-top: 2%;
+  font-size: 18px;
+}
+
+.btnRedirect {
+  border: none;
+  font-size: 18px;
+  background: #FFF4F4;
+  color: red;
+}
+.icons {
+  width: 45px;
+  margin-left: 10px;
+}
+.p {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.label {
+  font-size: 20px;
+  margin-top: 10px;
+}

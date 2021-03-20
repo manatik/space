@@ -1,8 +1,12 @@
+// packages
 import React from 'react'
-import style from './Cabinet.module.scss'
-import Hamburger from "../../Header/Hamburger/Hamburger";
-import logo from "../../Img/logoCabinet.png";
 import {NavLink} from "react-router-dom";
+// components
+import Hamburger from "../../Header/Hamburger/Hamburger";
+// styles
+import style from './Cabinet.module.scss'
+// pictures
+import logo from "../../Img/logoCabinet.png";
 import book from '../../Img/book.png'
 
 const Cabinet = () => {

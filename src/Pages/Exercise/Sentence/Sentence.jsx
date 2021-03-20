@@ -1,8 +1,11 @@
+// packages
 import React from 'react'
-import style from './Sentence.module.scss'
+import _ from 'lodash'
+// components
 import Hamburger from "../../../Header/Hamburger/Hamburger";
 import useExercise from "../useExercise";
-import _ from 'lodash'
+// styles
+import style from './Sentence.module.scss'
 
 const Sentence = () => {
     const {objectExercise} = useExercise() || {}

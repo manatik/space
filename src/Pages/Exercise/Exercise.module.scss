@@ -5,22 +5,19 @@
 
   .exercise {
     display: grid;
-    grid-template-areas: "words sentence dialogs";
-    grid-template-columns: 4fr 1fr 4fr;
+    grid-template-areas: "words sentence";
+    grid-template-columns: 1fr 1fr;
     margin-top: 200px;
 
     .words {
       grid-area: words;
-      margin-top: 100px;
+
     }
     .sentence {
       grid-area: sentence;
-      margin-top: -100px;
+
     }
-    .dialogs {
-      grid-area: dialogs;
-      margin-top: 100px;
-    }
+
     .link {
       display: flex;
       align-items: center;
