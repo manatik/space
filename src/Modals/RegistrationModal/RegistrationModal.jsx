@@ -1,43 +1,40 @@
 // packages
-import React from "react";
+import React, {useEffect} from "react";
 // components
-import {useContextProvider} from "../../Pages/ContextProvider/Context";
-import {sendDataFromRegistrationModal} from '../../Api/api'
+import {useContextProvider} from "../../Hooks/Context";
+import {useHttp} from '../../Api/api'
+import {useMessage} from "../../Hooks/msg.hook";
 //styles
 import styles from '../Modal.module.scss'
 
 const RegistrationModal = () => {
-
     const {
-        authenticate: {
-            setIsAuthenticated
-        },
         registrationModal: {
-            setIsModalReg,
-            username,
-            setUsername,
-            userEmail,
-            setUserEmail,
-            userPhone,
-            setUserPhone,
-            userPassword,
-            setUserPassword
+            modalForm,
+            setModalForm,
+            setIsModalReg
         } = {},
-        loginModal: {
-            setIsModalLogin,
-        }
+        loginModal: {setIsModalLogin}
     } = useContextProvider() || {}
 
-    const handleClick = () => {
-        const tempData = {
-            name: username,
-            email: userEmail,
-            phone: userPhone,
-            password: userPassword
-        }
-        sendDataFromRegistrationModal(tempData).then()
-        setIsAuthenticated(true)
-        setIsModalReg(false)
+    const message = useMessage()
+
+    const {clearError, error, request, loading} = useHttp()
+
+    useEffect(() => {
+        message(error)
+        clearError()
+    }, [error, message, clearError])
+
+    const handleChange = (e) => {
+        setModalForm({...modalForm, [e.target.name]: e.target.value})
+    }
+    const handleClick = async () => {
+        try {
+            const data = await request('/api/auth/register', 'POST',{...modalForm})
+            message(data.message)
+            setIsModalReg(false)
+        } catch (e) {}
     }
 
     return (
@@ -46,8 +43,9 @@ const RegistrationModal = () => {
                 <label className={styles.label} htmlFor="name">Имя:</label>
                 <input
                     id="name"
+                    name="name"
                     className={styles.input}
-                    onChange={(e) => setUsername(e.target.value)}
+                    onChange={handleChange}
                     placeholder={'Имя-Ник'}
                 />
                 <label className={styles.label} htmlFor="email">E-mail:</label>
@@ -55,15 +53,15 @@ const RegistrationModal = () => {
                     type="email"
                     name="email"
                     className={styles.input}
-                    onChange={(e) => setUserEmail(e.target.value)}
+                    onChange={handleChange}
                     placeholder="E-mail"
                 />
                 <label className={styles.label} htmlFor="tel">Номер телефона:</label>
                 <input
                     type="tel"
-                    name="tel"
+                    name="phone"
                     className={styles.input}
-                    onChange={(e) => setUserPhone(e.target.value)}
+                    onChange={handleChange}
                     placeholder={'Телефон'}
                     pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
                 />
@@ -72,21 +70,26 @@ const RegistrationModal = () => {
                     type="password"
                     name="password"
                     className={styles.input}
-                    onChange={(e) => setUserPassword(e.target.value)}
+                    onChange={handleChange}
                     placeholder={'Пароль'}
                 />
 
                 <button className={styles.btn}
                         onClick={handleClick}
+                        disabled={loading}
                 >
                     Зарегистрироваться
                 </button>
+
                 <p className={styles.txtEnter}>
                     У вас уже есть аккаунт?
-                    <button className={styles.btnRedirect} onClick={() => {
-                        setIsModalReg(false);
-                        setIsModalLogin(true)
-                    }}>
+                    <button
+                        className={styles.btnRedirect}
+                        onClick={() => {
+                            setIsModalReg(false);
+                            setIsModalLogin(true)
+                        }}
+                    >
                         Войти
                     </button>
                 </p>

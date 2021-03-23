@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import {BrowserRouter as Router} from "react-router-dom";
-import {ContextProvider, useContextProvider} from "./Pages/ContextProvider/Context";
+import {ContextProvider, useContextProvider} from "./Hooks/Context";
 
 ReactDOM.render(
     <React.StrictMode>

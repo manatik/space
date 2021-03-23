@@ -1,10 +1,12 @@
 // packages
 import React from 'react'
 import {NavLink} from "react-router-dom";
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 //components
 import Header from "../../Header/Header";
 import MainPageProgram from "./MainPageProgram";
-import {useContextProvider} from "../ContextProvider/Context";
+import {useContextProvider} from "../../Hooks/Context";
 import RegistrationModal from "../../Modals/RegistrationModal/RegistrationModal";
 import Modal from "../../Modals/Modal";
 import LoginModal from "../../Modals/LoginModal/LoginModal";
@@ -16,30 +18,41 @@ import joda from "../../Img/MainPage/joda.png";
 
 const MainPage = () => {
     const {
+        authenticate: {
+            isAuthenticated,
+            setIsAuthenticated
+        },
         registrationModal: {
             isModalReg,
             setIsModalReg
-        } = {},
+        },
         loginModal: {
             isModalLogin,
             setIsModalLogin
-        } = {}
+        }
     } = useContextProvider() || {}
 
     return (
         <>
             <div className={styles.mainPage}>
                 <Header/>
+                <ToastContainer/>
                 <div className={styles.section}>
                     <div className={styles.offer}>
                         <p>Приложение, созданное для наиболее легкого и простого изучения англиского языка</p>
                         <div style={{marginTop: '30px'}}>
-                            <NavLink className={styles.btn}
-                                     to={"/"}
-                                     onClick={() => setIsModalReg(true)}
-                            >
-                                Начать обучение
-                            </NavLink>
+                            {!isAuthenticated
+                                ? <NavLink className={styles.btn}
+                                           to={"/"}
+                                           onClick={() => setIsModalReg(true)}
+                                >
+                                    Начать обучение
+                                </NavLink>
+                                : <NavLink className={styles.btn}
+                                           to={"/programEng"}
+                                >
+                                    Выбери уровень!
+                                </NavLink>}
                         </div>
                     </div>
                     <img className={styles.jodaMainPage} src={joda} alt={"joda"}/>

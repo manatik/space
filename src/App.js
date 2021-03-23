@@ -1,6 +1,6 @@
 import React from 'react';
 import Router from "./Routing/Router";
-import {useContextProvider} from "./Pages/ContextProvider/Context";
+import {useContextProvider} from "./Hooks/Context";
 import style from './App.module.scss'
 const App = () => {
     const {

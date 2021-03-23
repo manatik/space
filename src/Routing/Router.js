@@ -8,7 +8,7 @@ import Exercise from "../Pages/Exercise/Exercise";
 import Words from "../Pages/Exercise/Words/Words";
 import Sentence from "../Pages/Exercise/Sentence/Sentence";
 import Dialogs from "../Pages/Exercise/Dialogs/Dialogs";
-import Cabinet from "../Pages/Cabinet/Cabinet";
+import Profile from "../Pages/Profile/Profile";
 
 const Router = (isAuthenticated) => {
     if (isAuthenticated) {
@@ -22,7 +22,7 @@ const Router = (isAuthenticated) => {
                 <Route path={"/words"} component={Words}/>
                 <Route path={"/sentence"} component={Sentence}/>
                 <Route path={"/dialog"} component={Dialogs}/>
-                <Route path={"/cabinet"} component={Cabinet}/>
+                <Route path={"/profile"} component={Profile}/>
                 <Redirect to={"/"}/>
             </Switch>
         )

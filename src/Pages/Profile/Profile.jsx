@@ -1,16 +1,19 @@
 // packages
-import React from 'react'
+import React, { useState } from 'react'
 import {NavLink} from "react-router-dom";
 // components
 import Hamburger from "../../Header/Hamburger/Hamburger";
 // styles
-import style from './Cabinet.module.scss'
+import style from './Profile.module.scss'
 // pictures
 import logo from "../../Img/logoCabinet.png";
 import book from '../../Img/book.png'
 
-const Cabinet = () => {
+const Profile = () => {
+    const [toggle, setToggle] = useState(false)
+    const handleClick = () => {
 
+    }
     return (
         <>
             <div className={style.main}>
@@ -30,20 +33,27 @@ const Cabinet = () => {
                             <div className={style.divImgProfile}>
                                 <img className={style.imgProfile} src={book} alt=""/>
                             </div>
-                            <div className={style.inputs}>
-                                <input className={style.input} type="text" placeholder='Имя'/>
-                                <input className={style.input} type="text" placeholder='Почта'/>
-                                <input className={style.input} type="text" placeholder='Что-то'/>
-                                <input className={style.input} type="text" placeholder='Что-то'/>
-                                <input className={style.input} type="text" placeholder='Что-то'/>
+                            <div className={style.profileFields}>
+                                <span className={style.span}>Имя пользователя</span>
+                                <span className={style.span}>Почта пользователя</span>
+                                <span className={style.span}>Телефон пользователя</span>
+                                <span className={style.span}>Гугл аккаунт пользователя</span>
+                                <span className={style.span}>ВК аккаунт пользователя</span>
                             </div>
+                            {/*<div className={style.inputs}>*/}
+                            {/*    <input className={style.input} type="text" placeholder='Имя'/>*/}
+                            {/*    <input className={style.input} type="text" placeholder='Почта'/>*/}
+                            {/*    <input className={style.input} type="text" placeholder='Что-то'/>*/}
+                            {/*    <input className={style.input} type="text" placeholder='Что-то'/>*/}
+                            {/*    <input className={style.input} type="text" placeholder='Что-то'/>*/}
+                            {/*</div>*/}
                             <div className={style.btnProfile}>
-                                <button className={style.btn}>Редактировать</button>
+                                <button className={style.btn} onChange={handleClick}>Редактировать</button>
                             </div>
                         </div>
                         <div className={style.progress}>
                             <div className={style.progressField1}>
-
+                                Тут наверно будет дата пикер
                             </div>
                             <div className={style.progressField2}>
                                 <h1 className={style.lvls}>Levels</h1>
@@ -63,4 +73,4 @@ const Cabinet = () => {
         </>
     )
 }
-export default Cabinet
+export default Profile
