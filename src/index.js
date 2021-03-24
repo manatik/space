@@ -1,18 +1,21 @@
+// packages
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import {BrowserRouter as Router} from "react-router-dom";
-import {ContextProvider, useContextProvider} from "./Hooks/Context";
+// components
+import App from './App';
+// hooks
+import {ContextProvider} from "./hooks/context";
 
 ReactDOM.render(
-    <React.StrictMode>
-        <Router>
-        <ContextProvider>
-            <App/>
-        </ContextProvider>
-        </Router>
-    </React.StrictMode>,
-    document.getElementById('root')
+  <React.StrictMode>
+    <Router>
+      <ContextProvider>
+        <App/>
+      </ContextProvider>
+    </Router>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

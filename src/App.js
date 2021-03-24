@@ -1,20 +1,25 @@
+// packages
 import React from 'react';
-import Router from "./Routing/Router";
-import {useContextProvider} from "./Hooks/Context";
-import style from './App.module.scss'
-const App = () => {
-    const {
-        authenticate: {
-            isAuthenticated,
-        }
-    } = useContextProvider()
-    const routes = Router(isAuthenticated)
-    return (
-            <div className={style}>
-                {routes}
-            </div>
+// components
+import Router from "./routing/router";
+// hooks
+import {useContextProvider} from "./hooks/context";
+// styles
+import style from './app.module.scss'
 
-    );
+const App = () => {
+  const {
+    authenticate: {
+      isAuthenticated,
+    }
+  } = useContextProvider()
+  const routes = Router(isAuthenticated)
+  return (
+    <div className={style}>
+      {routes}
+    </div>
+
+  );
 }
 
 export default App;
