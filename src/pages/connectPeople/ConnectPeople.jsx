@@ -1,11 +1,10 @@
 // packages
-import React from "react";
+import React from 'react'
 
 const ConnectPeople = () => {
-
   return (
-    <>
-    </>
+      <>
+      </>
   )
 }
 export default ConnectPeople

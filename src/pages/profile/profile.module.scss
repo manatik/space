@@ -12,21 +12,24 @@
       grid-area: navBar;
       height: 90vh;
 
-      .navLinks {
+      .spans {
         display: flex;
         flex-direction: column;
         margin: 30% 0 0 10%;
 
-        .navLink {
+        .span {
           margin-top: 10%;
-          text-decoration: none;
           background-color: #5289E2;
           text-align: center;
-          color: white;
           font-size: 25px;
           padding: 5px;
           width: 200px;
           border-radius: 20px;
+
+          .navLink {
+            text-decoration: none;
+            color: white;
+          }
         }
       }
     }
@@ -97,8 +100,12 @@
             border-right: none;
             border-bottom: 1px black solid;
             background-color: #5289E2;
-            color: #ffffff;
+            color: #fff;
             font-size: 20px;
+          }
+
+          .input::placeholder {
+            color: #fff;
           }
         }
 

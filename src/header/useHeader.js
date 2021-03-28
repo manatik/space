@@ -5,18 +5,18 @@ const useHeader = () => {
     {
       id: 1,
       name: 'Главная',
-      to: '/',
+      to: '/'
     },
     {
       id: 2,
       name: 'Программа и методика',
-      to: '/programEng',
+      to: '/programEng'
     },
     {
       id: 3,
       name: 'О нас',
       to: '/about'
-    },
+    }
   ]
 
   return {

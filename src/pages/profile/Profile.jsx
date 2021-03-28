@@ -1,64 +1,86 @@
 // packages
-import React, {useState} from 'react'
-import {NavLink} from "react-router-dom";
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
 // components
-import Hamburger from "../../header/hamburger/Hamburger";
+import Hamburger from '../../components/hamburger/Hamburger'
 // styles
 import style from './profile.module.scss'
 // pictures
-import logo from "../../img/logoCabinet.png";
+import logo from '../../img/logoCabinet.png'
 import book from '../../img/book.png'
+import { useProfile } from './useProfile'
 
 const Profile = () => {
-  const [toggle, setToggle] = useState(false)
-  const handleClick = () => {
+  const { dataUser, editProfile, handleChange, loading, saveProfile, setToggle, toggle } = useProfile()
 
-  }
   return (
-    <>
-      <div className={style.main}>
-        <Hamburger/>
-        <div className={style.content}>
-          <div className={style.navBar}>
-            <img src={logo} alt="logo"/>
-            <div className={style.navLinks}>
-              <NavLink className={style.navLink} to={'/'}>линк 1</NavLink>
-              <NavLink className={style.navLink} to={'/'}>линк 2</NavLink>
-              <NavLink className={style.navLink} to={'/'}>линк 3</NavLink>
-              <NavLink className={style.navLink} to={'/'}>линк 4</NavLink>
+      <>
+          <ToastContainer/>
+          <div className={ style.main }>
+              <Hamburger/>
+              <div className={ style.content }>
+                  <div className={ style.navBar }>
+                      <img alt="logo" src={ logo }/>
+                      <div className={ style.spans }>
+                          <span className={ style.span } onClick={() => setToggle(false)}>
+                              <NavLink className={ style.navLink } to='/profile'>Ваш профиль</NavLink>
+                          </span>
+                          <span className={ style.span } onClick={ editProfile }>
+                              <NavLink className={ style.navLink } to='/profile'>Редактировать профиль</NavLink>
+                          </span>
+                          <span className={ style.span }>
+                              <NavLink className={ style.navLink } to='/'>линк 3</NavLink>
+                          </span>
+                          <span className={ style.span }>
+                              <NavLink className={ style.navLink } to='/'>линк 4</NavLink>
+                          </span>
+                      </div>
+                  </div>
+                  <div className={ style.profileField }>
+                      <div className={ style.profile }>
+                          <div className={ style.divImgProfile }>
+                              <img alt="" className={ style.imgProfile } src={ book }/>
+                          </div>
+                          { !toggle
+                            ? <div className={ style.profileFields }>
+                                <span className={ style.span }>
+                                    { `Имя: ${dataUser.name}` }
+                                </span>
+                                <span className={ style.span }>
+                                    { `E-mail: ${dataUser.email}` }
+                                </span>
+                                <span className={ style.span }>
+                                    { `Телефон: ${dataUser.phone}` }
+                                </span>
+                                <span className={ style.span }>{ dataUser.google }</span>
+                                <span className={ style.span }>{ dataUser.vk }</span>
+                                {/*eslint-disable*/ }
+                </div>
+                : <div className={ style.inputs }>
+                  <input className={ style.input } name='name' onChange={ handleChange } placeholder='Имя' type="text"/>
+                  <input className={ style.input } name='email' onChange={ handleChange } placeholder='Почта'
+                         type="text"/>
+                  <input className={ style.input } name='phone' onChange={ handleChange } placeholder='Телефон'
+                         type="text"/>
+                  {/*<input className={ style.input } name='google' onChange={ handleChange } placeholder='Гугл'*/}
+                  {/*       type="text"/>*/}
+                  {/*<input className={ style.input } name='vk' onChange={ handleChange } placeholder='ВК' type="text"/>*/}
+                </div> }
+              <div className={ style.btnProfile }>
+                { toggle &&
+                <button className={ style.btn } disabled={ loading } onClick={ saveProfile }
+                        type='button'>Сохранить</button> }
+              </div>
             </div>
-          </div>
-          <div className={style.profileField}>
-            <div className={style.profile}>
-              <div className={style.divImgProfile}>
-                <img className={style.imgProfile} src={book} alt=""/>
-              </div>
-              <div className={style.profileFields}>
-                <span className={style.span}>Имя пользователя</span>
-                <span className={style.span}>Почта пользователя</span>
-                <span className={style.span}>Телефон пользователя</span>
-                <span className={style.span}>Гугл аккаунт пользователя</span>
-                <span className={style.span}>ВК аккаунт пользователя</span>
-              </div>
-              {/*<div className={style.inputs}>*/}
-              {/*    <input className={style.input} type="text" placeholder='Имя'/>*/}
-              {/*    <input className={style.input} type="text" placeholder='Почта'/>*/}
-              {/*    <input className={style.input} type="text" placeholder='Что-то'/>*/}
-              {/*    <input className={style.input} type="text" placeholder='Что-то'/>*/}
-              {/*    <input className={style.input} type="text" placeholder='Что-то'/>*/}
-              {/*</div>*/}
-              <div className={style.btnProfile}>
-                <button className={style.btn} onChange={handleClick}>Редактировать</button>
-              </div>
-            </div>
-            <div className={style.progress}>
-              <div className={style.progressField1}>
+            <div className={ style.progress }>
+              <div className={ style.progressField1 }>
                 Тут наверно будет дата пикер
               </div>
-              <div className={style.progressField2}>
-                <h1 className={style.lvls}>Levels</h1>
+              <div className={ style.progressField2 }>
+                <h1 className={ style.lvls }>Levels</h1>
                 <hr/>
-                <ul className={style.ul}>
+                <ul className={ style.ul }>
                   <li>fdfasfsafa</li>
                   <li>fdfasfasfsaf</li>
                   <li>fdfsafafafa</li>

@@ -1,22 +1,21 @@
 // packages
-import {useState, useCallback, useEffect} from 'react'
-
+import { useCallback, useEffect, useState } from 'react'
+import { useContextProvider } from './context'
 // name localStorage
 const storageName = 'userData'
 
 export const useAuth = () => {
+  const { authenticate: { setIsAuthenticated } } = useContextProvider() || {}
   const [token, setToken] = useState(null)
   const [userId, setUserId] = useState(null)
 
   const login = useCallback((jwtToken, id) => {
     setToken(jwtToken)
     setUserId(id)
-
     localStorage.setItem(storageName, JSON.stringify({
-      userId: id, token: jwtToken
+      token: jwtToken, userId: id
     }))
   }, [])
-
 
   const logout = useCallback(() => {
     setToken(null)
@@ -26,12 +25,12 @@ export const useAuth = () => {
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem(storageName))
-
     if (data && data.token) {
+      setIsAuthenticated(!!data.userId)
       login(data.token, data.userId)
     }
+    // eslint-disable-next-line
   }, [login])
 
-
-  return {login, logout, token, userId}
+  return { login, logout, token, userId }
 }

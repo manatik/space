@@ -1,61 +1,72 @@
+// packages
+import React, { useCallback, useEffect, useState } from 'react'
 // styles
-import style from "./lesson.module.scss";
+import style from './lesson.module.scss'
 // pictures
-import star from "../../img/Lesson/Raiting.png";
+import star from '../../img/Lesson/Raiting.png'
 import zat from '../../img/Lesson/zatichka.png'
+import { useContextProvider } from '../../hooks/context'
+import { useHttp } from '../../api/api'
 
 const useLesson = () => {
+  const { varLessons: { limit, skip } } = useContextProvider()
+  const { request } = useHttp()
+  const [data, setData] = useState([])
+  const id = localStorage.getItem('lvl')
+
   const stars =
-    <>
-      <img className={style.star} src={star} alt={'StarRating'}/>
-      <img className={style.star} src={star} alt={'StarRating'}/>
-      <img className={style.star} src={star} alt={'StarRating'}/>
-    </>
+      <>
+          <img alt={'StarRating'} className={style.star} src={star}/>
+          <img alt={'StarRating'} className={style.star} src={star}/>
+          <img alt={'StarRating'} className={style.star} src={star}/>
+      </>
+
+  const getLessons = useCallback(async () => {
+    try {
+      const getDataUser = await request('/api/lessons', 'POST', { id, limit, skip })
+      setData(getDataUser)
+    } catch (e) {
+    }
+    // eslint-disable-next-line
+  }, [])
+
+  useEffect(() => {
+    if (data) {
+      getLessons().then()
+    }
+    // eslint-disable-next-line
+  }, [])
 
   const objectLesson = [
     {
-      id: 1,
-      numberLesson: 1,
-      stars: stars,
+      _id: 1,
       imgLesson: zat,
-      themeLesson: "Жожоба жумайсынба"
+      number: 1,
+      stars: stars,
+      title: 'Жожоба жумайсынба'
     },
     {
-      id: 2,
-      numberLesson: 2,
-      stars: stars,
+      _id: 2,
       imgLesson: zat,
-      themeLesson: "Жожоба жумайсынба"
+      number: 2,
+      stars: stars,
+      title: 'Жожоба жумайсынба'
     },
     {
-      id: 3,
-      numberLesson: 3,
-      stars: stars,
+      _id: 3,
       imgLesson: zat,
-      themeLesson: "Жожоба жумайсынба"
+      number: 3,
+      stars: stars,
+      title: 'Жожоба жумайсынба'
     }, {
-      id: 4,
-      numberLesson: 4,
-      stars: stars,
+      _id: 4,
       imgLesson: zat,
-      themeLesson: "Жожоба жумайсынба"
-    }, {
-      id: 5,
-      numberLesson: 5,
+      number: 4,
       stars: stars,
-      imgLesson: zat,
-      themeLesson: "Жожоба жумайсынба"
-    }, {
-      id: 6,
-      numberLesson: 6,
-      stars: stars,
-      imgLesson: zat,
-      themeLesson: "Жожоба жумайсынба"
-    },
-
+      title: 'Жожоба жумайсынба'
+    }
   ]
-  return {
-    objectLesson
-  }
+
+  return { data, objectLesson }
 }
 export default useLesson

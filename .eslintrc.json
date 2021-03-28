@@ -1,0 +1,96 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "standard",
+    "standard-react"
+  ],
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "17.0.1"
+    }
+  },
+  //  "parser": "@babel/eslint-parser",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "plugins": [
+    "react",
+    "import",
+    "sort-keys-fix",
+    "sort-destructure-keys"
+  ],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "no-console": "off",
+    "padding-line-between-statements": "error",
+    "react/boolean-prop-naming": "error",
+    "react/button-has-type": "error",
+    "react/destructuring-assignment": "error",
+    "react/no-children-prop": "error",
+    "react/no-danger-with-children": "error",
+    "react/no-string-refs": "error",
+    "react/no-unsafe": "error",
+    "react/no-unused-prop-types": "error",
+    "react/prefer-stateless-function": "error",
+    "react/prop-types": "error",
+    "react/self-closing-comp": "error",
+    "react/sort-comp": "error",
+    "react/sort-prop-types": "error",
+    "react/jsx-closing-bracket-location": "error",
+    "react/jsx-closing-tag-location": "error",
+    "react/jsx-curly-newline": [
+      "error",
+      {
+        "multiline": "consistent",
+        "singleline": "consistent"
+      }
+    ],
+    "react/jsx-first-prop-new-line": [
+      "error",
+      "multiline-multiprop"
+    ],
+    "react/jsx-handler-names": "error",
+    "react/jsx-indent": "error",
+    "react/jsx-indent-props": "error",
+    "react/jsx-max-props-per-line": [
+      "error",
+      {
+        "maximum": 3,
+        "when": "always"
+      }
+    ],
+    "react/jsx-no-bind": "error",
+    "react/jsx-one-expression-per-line": [
+      "error",
+      {
+        "allow": "single-child"
+      }
+    ],
+    "react/jsx-pascal-case": 0,
+    "react/jsx-sort-default-props": "error",
+    "react/jsx-sort-props": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "sort-destructure-keys/sort-destructure-keys": 2,
+    "sort-keys": [
+      "error",
+      "asc",
+      {
+        "caseSensitive": true,
+        "natural": false,
+        "minKeys": 2
+      }
+    ],
+    "sort-keys-fix/sort-keys-fix": "warn",
+    "spaced-comment": "error"
+  }
+}

@@ -1,11 +1,11 @@
 const useExercise = () => {
-  let answer = ''
+  const answer = ''
   const objectExercise = [
     {
+      answer: answer,
       id: 1,
-      rules: "Тут будет какое-то правило",
-      sentence: "Tut predlozhenie na english yazuke",
-      answer: answer
+      rules: 'Тут будет какое-то правило',
+      sentence: 'Tut predlozhenie na english yazuke'
     }
   ]
 

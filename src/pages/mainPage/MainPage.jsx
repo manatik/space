@@ -1,79 +1,79 @@
 // packages
 import React from 'react'
-import {NavLink} from "react-router-dom";
-import {ToastContainer} from 'react-toastify';
-//components
-import Header from "../../header/Header";
-import MainPageProgram from "./MainPageProgram";
-import RegistrationModal from "../../modals/registrationModal/RegistrationModal";
-import Modal from "../../modals/Modal";
-import LoginModal from "../../modals/loginModal/LoginModal";
+import { NavLink } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
+// components
+import Header from '../../header/Header'
+import MainPageProgram from './MainPageProgram'
+import RegistrationModal from '../../modals/registrationModal/RegistrationModal'
+import Modal from '../../components/modal/Modal'
+import LoginModal from '../../modals/loginModal/LoginModal'
 // hooks
-import {useContextProvider} from "../../hooks/context";
+import { useContextProvider } from '../../hooks/context'
 // styles
 import style from './mainPage.module.scss'
-import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css'
 // pictures
-import joda from "../../img/MainPage/joda.png";
-
+import iodine from '../../img/MainPage/joda.png'
 
 const MainPage = () => {
   const {
     authenticate: {
-      isAuthenticated,
-      setIsAuthenticated
-    },
-    registrationModal: {
-      isModalReg,
-      setIsModalReg
+      isAuthenticated
     },
     loginModal: {
       isModalLogin,
       setIsModalLogin
+    },
+    registrationModal: {
+      isModalReg,
+      setIsModalReg
     }
   } = useContextProvider() || {}
 
   return (
-    <>
-      <div className={style.mainPage}>
-        <Header/>
-        <ToastContainer/>
-        <div className={style.section}>
-          <div className={style.offer}>
-            <p>Приложение, созданное для наиболее легкого и простого изучения англиского языка</p>
-            <div style={{marginTop: '30px'}}>
-              {!isAuthenticated
-                ? <NavLink className={style.btn}
-                           to={"/"}
-                           onClick={() => setIsModalReg(true)}
-                >
-                  Начать обучение
-                </NavLink>
-                : <NavLink className={style.btn}
-                           to={"/programEng"}
+      <>
+          <div className={style.mainPage}>
+              <Header/>
+              <ToastContainer/>
+              <div className={style.section}>
+                  <div className={style.offer}>
+                      <p>Приложение, созданное для наиболее легкого и простого изучения английского языка</p>
+                      <div style={{ marginTop: '30px' }}>
+                          {!isAuthenticated
+                            ? <span onClick={() => setIsModalReg(true)}>
+                                <NavLink
+                                    className={style.btn}
+                                    to={'/'}
+                                >
+                                    Начать обучение
+                                    {/* eslint-disable */}
+                              </NavLink>
+                            </span>
+
+                : <NavLink
+                  className={style.btn}
+                  to={'/programEng'}
                 >
                   Выбери уровень!
                 </NavLink>}
             </div>
           </div>
-          <img className={style.jodaMainPage} src={joda} alt={"joda"}/>
+          <img alt={'iodine'} className={style.iodineMainPage} src={iodine}/>
         </div>
       </div>
       <MainPageProgram/>
 
-      {isModalReg &&
-      <Modal isOpen={isModalReg} isClose={setIsModalReg}>
+      <Modal isClose={setIsModalReg} isOpen={isModalReg}>
         <RegistrationModal/>
-      </Modal>}
+      </Modal>
 
-      {isModalLogin &&
-      <Modal isOpen={isModalLogin} isClose={setIsModalLogin}>
+      <Modal isClose={setIsModalLogin} isOpen={isModalLogin}>
         <LoginModal/>
-      </Modal>}
+      </Modal>
     </>
   )
 }
 export default MainPage
 
 // TODO: для форм используй final-form или formik
-

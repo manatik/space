@@ -23,29 +23,32 @@
     margin-top: 3%;
   }
 
-  .navLink {
-    font-size: 35px;
-    color: white;
-    text-decoration: none;
-    margin-top: 1%;
-    background-color: #391E6D;
-    border-radius: 109px;
-  }
+  .span {
+    margin-top: 2%;
 
-  .navLink:first-child {
-    padding: 10px 20px;
-  }
+    .navLink {
+      font-size: 35px;
+      color: white;
+      text-decoration: none;
+      background-color: #391E6D;
+      border-radius: 109px;
+    }
 
-  .navLink:nth-child(2) {
-    padding: 12px 30px;
-  }
+    .navLink:first-child {
+      padding: 10px 20px;
+    }
 
-  .navLink:nth-child(3) {
-    padding: 14px 30px;
-  }
+    .navLink:nth-child(2) {
+      padding: 12px 30px;
+    }
 
-  .navLink:nth-child(4) {
-    padding: 16px 35px;
+    .navLink:nth-child(3) {
+      padding: 14px 30px;
+    }
+
+    .navLink:nth-child(4) {
+      padding: 16px 35px;
+    }
   }
 
   .footer {

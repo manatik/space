@@ -1,6 +1,5 @@
 // packages
-import {useState} from "react";
-
+import { useState } from 'react'
 
 const useHamburger = () => {
   // это тело хука, тут можно писать его логику, получение даных, хранить информацию и все что угодно
@@ -9,7 +8,7 @@ const useHamburger = () => {
     {
       id: 1,
       name: 'Главная',
-      to: '/',
+      to: '/'
     },
     {
       id: 2,
@@ -40,13 +39,13 @@ const useHamburger = () => {
       id: 7,
       name: 'О нас',
       to: '/about'
-    },
+    }
   ]
 
   return {
     openedBurgerMenu,
-    setOpenedBurgerMenu,
-    routes
+    routes,
+    setOpenedBurgerMenu
   }
 }
 
