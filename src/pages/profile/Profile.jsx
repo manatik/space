@@ -6,13 +6,12 @@ import { ToastContainer } from 'react-toastify'
 import Hamburger from '../../components/hamburger/Hamburger'
 // styles
 import style from './profile.module.scss'
-// pictures
-import logo from '../../img/logoCabinet.png'
-import book from '../../img/book.png'
 import { useProfile } from './useProfile'
+// pictures
+const logo = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/logoCabinet.png?alt=media&token=f1190f8b-a1a4-4fe3-93d5-be801d12dfd6'
 
 const Profile = () => {
-  const { dataUser, editProfile, handleChange, loading, saveProfile, setToggle, toggle } = useProfile()
+  const { dataUser, editProfile, handleChange, loading, saveProfile, setToggle, toggle } = useProfile() || {}
 
   return (
       <>
@@ -40,7 +39,7 @@ const Profile = () => {
                   <div className={ style.profileField }>
                       <div className={ style.profile }>
                           <div className={ style.divImgProfile }>
-                              <img alt="" className={ style.imgProfile } src={ book }/>
+                              <img alt="" className={ style.imgProfile } src={ dataUser.imageProfile }/>
                           </div>
                           { !toggle
                             ? <div className={ style.profileFields }>

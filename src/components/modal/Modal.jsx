@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 // styles
 import styles from './modal.module.scss'
 // pictures
-import img from '../../img/modalImg.png'
+const img = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Modal%2FmodalImg.png?alt=media&token=5c9c0459-0651-4b02-866e-7c4b9e1b9742'
 
 // eslint-disable-next-line react/prop-types
 const Modal = ({ children, isClose, isOpen }) => {

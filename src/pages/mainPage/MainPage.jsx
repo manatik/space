@@ -14,7 +14,7 @@ import { useContextProvider } from '../../hooks/context'
 import style from './mainPage.module.scss'
 import 'react-toastify/dist/ReactToastify.css'
 // pictures
-import iodine from '../../img/MainPage/joda.png'
+const iodine = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/MainPage%2Fjoda.png?alt=media&token=007e653d-8819-4f19-b7d3-87c13bfa9e95'
 
 const MainPage = () => {
   const {

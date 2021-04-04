@@ -1,23 +1,23 @@
 .main {
-  background: url("../../img/Lesson/backgroundLesson.png") no-repeat left top / cover;
+  background: url('https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Lesson%2FbackgroundLesson.png?alt=media&token=9480e93d-ba43-475a-9e9b-38a042b676d7') no-repeat left top / cover;
 
   .lesson {
     display: flex;
-    justify-content: flex-start;
-    height: 100vh;
     align-items: center;
+    justify-content: center;
+    height: 100vh;
     overflow: auto;
 
     .backLesson {
       display: flex;
       align-items: center;
       flex-direction: column;
-      background-color: #2E05A3;
+      background-color: #6743d0;
       border-radius: 60px;
-      width: 100vh;
-      height: 50vh;
-      padding: 2vh 6vh;
-      margin-right: 8vh;
+      width: 400px;
+      height: 500px;
+      margin-left: 30px;
+      padding: 10px;
 
       .caption {
         font-size: 2vh;
@@ -25,20 +25,24 @@
       }
 
       .star {
+        display: flex;
+        justify-content: center;
         width: 7vh;
-      }
-
-      .stars {
+        margin-bottom: 10px;
 
       }
 
       .backImg {
-        width: 50vh;
+        height: 300px;
+        width: 300px;
+        border-radius: 10px;
       }
 
       .captionTheme {
         font-size: 3vh;
         color: white;
+        text-align: center;
+        margin-top: 10px;
       }
     }
   }

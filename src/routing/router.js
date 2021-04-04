@@ -11,6 +11,11 @@ import Words from '../pages/exercise/words/Words'
 import Sentence from '../pages/exercise/sentence/Sentence'
 import Dialogs from '../pages/exercise/dialogs/Dialogs'
 import Profile from '../pages/profile/Profile'
+// paths
+const lessonPath = '/programEng/:level'
+const exercisePath = '/programEng/:level/exercise/:number'
+const wordsPath = '/programEng/:level/exercise/:number/words'
+const sentencePath = '/programEng/:level/exercise/:number/sentence'
 
 const router = (isAuthenticated) => {
   if (isAuthenticated) {
@@ -19,10 +24,10 @@ const router = (isAuthenticated) => {
             <Route component={MainPage} exact path={'/'}/>
             <Route component={ProgramEng} exact path={'/programEng'}/>
             <Route component={About} exact path={'/about'}/>
-            <Route component={Lesson} exact path={'/lesson'}/>
-            <Route component={Exercise} exact path={'/exercise'}/>
-            <Route component={Words} exact path={'/words'}/>
-            <Route component={Sentence} exact path={'/sentence'}/>
+            <Route component={Lesson} exact path={lessonPath}/>
+            <Route component={Exercise} exact path={exercisePath}/>
+            <Route component={Words} exact path={wordsPath}/>
+            <Route component={Sentence} exact path={sentencePath}/>
             <Route component={Dialogs} exact path={'/dialog'}/>
             <Route component={Profile} exact path={'/profile'}/>
             <Redirect to={'/'}/>

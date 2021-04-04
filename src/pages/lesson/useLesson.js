@@ -1,19 +1,19 @@
 // packages
-import React, { useCallback, useEffect, useState } from 'react'
-// styles
-import style from './lesson.module.scss'
-// pictures
-import star from '../../img/Lesson/Raiting.png'
-import zat from '../../img/Lesson/zatichka.png'
+import React, { useEffect } from 'react'
+// hooks
 import { useContextProvider } from '../../hooks/context'
 import { useHttp } from '../../api/api'
+// styles
+import style from './lesson.module.scss'
+import { useParams } from 'react-router-dom'
+// pictures
+const star = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Lesson%2FRaiting.png?alt=media&token=f2aef50a-f04e-46a4-8577-c783e1d97d24'
 
 const useLesson = () => {
-  const { varLessons: { limit, skip } } = useContextProvider()
+  const { varLessons: { arrayLessons, limit, setArrayLessons, skip } } = useContextProvider()
   const { request } = useHttp()
-  const [data, setData] = useState([])
-  const id = localStorage.getItem('lvl')
-
+  const { level } = useParams()
+  const id = level
   const stars =
       <>
           <img alt={'StarRating'} className={style.star} src={star}/>
@@ -21,52 +21,21 @@ const useLesson = () => {
           <img alt={'StarRating'} className={style.star} src={star}/>
       </>
 
-  const getLessons = useCallback(async () => {
+  const getLessons = async () => {
     try {
-      const getDataUser = await request('/api/lessons', 'POST', { id, limit, skip })
-      setData(getDataUser)
+      const getDataLessons = await request('/api/lessons', 'POST', { id, limit, skip })
+      setArrayLessons(getDataLessons)
     } catch (e) {
     }
-    // eslint-disable-next-line
-  }, [])
+  }
 
   useEffect(() => {
-    if (data) {
+    if (arrayLessons) {
       getLessons().then()
     }
     // eslint-disable-next-line
   }, [])
 
-  const objectLesson = [
-    {
-      _id: 1,
-      imgLesson: zat,
-      number: 1,
-      stars: stars,
-      title: 'Жожоба жумайсынба'
-    },
-    {
-      _id: 2,
-      imgLesson: zat,
-      number: 2,
-      stars: stars,
-      title: 'Жожоба жумайсынба'
-    },
-    {
-      _id: 3,
-      imgLesson: zat,
-      number: 3,
-      stars: stars,
-      title: 'Жожоба жумайсынба'
-    }, {
-      _id: 4,
-      imgLesson: zat,
-      number: 4,
-      stars: stars,
-      title: 'Жожоба жумайсынба'
-    }
-  ]
-
-  return { data, objectLesson }
+  return { arrayLessons, stars }
 }
 export default useLesson

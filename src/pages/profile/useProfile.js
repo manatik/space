@@ -41,6 +41,7 @@ export const useProfile = () => {
       const getDataUser = await request('/api/profile/data', 'POST', { id })
       setDataUser({
         email: getDataUser.data.email,
+        imageProfile: getDataUser.data.imageProfile,
         name: getDataUser.data.name,
         phone: getDataUser.data.phone
       })

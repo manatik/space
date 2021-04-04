@@ -4,34 +4,35 @@ import _ from 'lodash'
 // components
 import Hamburger from '../../../components/hamburger/Hamburger'
 // hooks
-import useWords from './useWords'
+import { useExercise } from '../useExercise'
 // styles
 import style from './words.module.scss'
 
 const Words = () => {
-  const { objectWords } = useWords() || {}
+  const { arrayWords } = useExercise()
+
   return (
       <>
-          <div className={style.main}>
+          <div className={ style.main }>
               <Hamburger/>
-              {_.map(objectWords, (word) =>
-                  <div className={style.content} key={word.id}>
-                      <div className={style.divImageWord}>
-                          <img alt={word.alt} className={style.imageWord} src={word.img}/>
+              { _.map(arrayWords, (word) =>
+                  <div className={ style.content } key={ word.word }>
+                      <div className={ style.divImageWord }>
+                          <img alt={ word.alt } className={ style.imageWord } src={ word.image }/>
                       </div>
-                      <div className={style.divWords}>
-                          <p className={style.word}>{word.engWord}</p>
-                          <div className={style.divTranslate}>
-                              <p className={style.translate}>{word._1translate}</p>
-                              <p className={style.translate}>{word._2translate}</p>
-                              <p className={style.translate}>{word._3translate}</p>
+                      <div className={ style.divWords }>
+                          <p className={ style.word }>{ word.word }</p>
+                          <div className={ style.divTranslate }>
+                              <p className={ style.translate }>{ word.translate1 }</p>
+                              <p className={ style.translate }>{ word.translate2 }</p>
                           </div>
                       </div>
                   </div>
-              )}
-              <div className={style.empty}/>
+              ) }
+              <div className={ style.empty }/>
           </div>
       </>
   )
 }
+
 export default Words

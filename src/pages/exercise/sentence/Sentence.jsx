@@ -4,20 +4,20 @@ import _ from 'lodash'
 // components
 import Hamburger from '../../../components/hamburger/Hamburger'
 // hooks
-import useExercise from '../useExercise'
+import { useExercise } from '../useExercise'
 // styles
 import style from './sentence.module.scss'
 
 const Sentence = () => {
-  const { objectExercise } = useExercise() || {}
+  const { arraySentence } = useExercise()
   return (
       <>
           <div className={style.main}>
               <Hamburger/>
-              {_.map(objectExercise, (exercise) =>
-                  <div className={style.content} key={exercise.id}>
+              {_.map(arraySentence, (exercise) =>
+                  <div className={style.content} key={exercise._id}>
                       <div className={style.rules}>
-                          {exercise.rules}
+                          {exercise.rule}
                       </div>
                       <div className={style.sentence}>
                           {exercise.sentence}
@@ -33,6 +33,7 @@ const Sentence = () => {
                           />
                           <button className={style.buttonSentence} type='button'>Проверить</button>
                       </div>
+                      <span>{exercise.sentenceAnswer}</span>
                   </div>
               )}
           </div>

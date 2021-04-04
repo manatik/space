@@ -1,7 +1,8 @@
 .main {
-  background: url("../../../img/Exercise/Sentence/backgroundSentence.png") no-repeat center / cover;
+  background: url('https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Exercise%2FSentence%2FbackgroundSentence.png?alt=media&token=42a6128a-3528-4dc2-8cad-04b58ef38355') no-repeat center / cover;
   height: 100vh;
   color: white;
+  overflow: auto;
 
   .content {
     display: flex;

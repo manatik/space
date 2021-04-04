@@ -6,11 +6,11 @@ import { useContextProvider } from '../../hooks/context'
 import { useHttp } from '../../api/api'
 import { useAuth } from '../../hooks/auth.hook'
 import { useMessage } from '../../hooks/msg.hook'
-// pictures
-import google from '../../img/google.png'
-import vk from '../../img/vk.png'
 // style
 import style from '../../components/modal/modal.module.scss'
+// pictures
+const google = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/google.png?alt=media&token=a19aa6fd-92f2-4a5f-9aa7-bf0b24984365'
+const vk = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/vk.png?alt=media&token=6fddd9b8-3c53-45a4-a5f4-66329d8b8c7b'
 
 const LoginModal = () => {
   const {

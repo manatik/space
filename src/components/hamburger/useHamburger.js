@@ -1,50 +1,30 @@
 // packages
 import { useState } from 'react'
+import { useAuth } from '../../hooks/auth.hook'
+import { useContextProvider } from '../../hooks/context'
 
 const useHamburger = () => {
+  const {
+    authenticate: { setIsAuthenticated }
+  } = useContextProvider() || {}
+  const { logout } = useAuth()
   // это тело хука, тут можно писать его логику, получение даных, хранить информацию и все что угодно
   const [openedBurgerMenu, setOpenedBurgerMenu] = useState(false)
-  const routes = [
-    {
-      id: 1,
-      name: 'Главная',
-      to: '/'
-    },
-    {
-      id: 2,
-      name: 'Программа и методика',
-      to: '/programEng'
-    },
-    {
-      id: 3,
-      name: 'Elementary',
-      to: '/lesson'
-    },
-    {
-      id: 4,
-      name: 'Intermediate',
-      to: '/lesson'
-    },
-    {
-      id: 5,
-      name: 'Pre-Intermediate',
-      to: '/lesson'
-    },
-    {
-      id: 6,
-      name: 'Upper-Intermediate',
-      to: '/lesson'
-    },
-    {
-      id: 7,
-      name: 'О нас',
-      to: '/about'
-    }
-  ]
+
+  const logoutHandler = (e) => {
+    e.preventDefault()
+    logout()
+    setIsAuthenticated(false)
+  }
+
+  const handleClick = (e) => {
+    localStorage.setItem('lvl', e.target.id)
+  }
 
   return {
+    handleClick,
+    logoutHandler,
     openedBurgerMenu,
-    routes,
     setOpenedBurgerMenu
   }
 }

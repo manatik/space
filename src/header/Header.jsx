@@ -10,8 +10,8 @@ import { useAuth } from '../hooks/auth.hook'
 // style
 import style from './header.module.scss'
 // pictures
-import logo from '../img/logo.svg'
-import user from '../img/Header/user 1.png'
+const logo = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/logo.svg?alt=media&token=dd2ca7a5-10e8-44c5-9d27-8612140f71d8'
+const user = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Header%2Fuser%201.png?alt=media&token=895414f7-43d3-462d-a877-8798b7c7d14a'
 
 const Header = () => {
   const { routes } = useHeader()

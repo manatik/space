@@ -1,6 +1,7 @@
+/* eslint-disable */
 // packages
 import { useCallback, useState } from 'react'
-
+import {QueryClient, useQuery} from 'react-query'
 export const useHttp = () => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
@@ -30,4 +31,23 @@ export const useHttp = () => {
   const clearError = useCallback(() => setError(null), [])
 
   return { clearError, error, loading, request }
+  // const request = (url, method = 'GET', body = null, headers = {}) => {
+  //   try {
+  //     if (body) {
+  //       body = JSON.stringify(body)
+  //       headers['Content-Type'] = 'application/json'
+  //     }
+  //     const {isLoading, error, data } = useQuery('data', () =>
+  //       fetch(url, {body, headers, method}).then(res => res.json())
+  //     )
+  //     if (isLoading) return 'Loading...'
+  //
+  //     if (error) return 'An error has occurred' + error.message
+  //
+  //     return data
+  //   } catch (e) {
+  //
+  //   }
+  // }
+  // return { request }
 }

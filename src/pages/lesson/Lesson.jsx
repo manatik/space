@@ -1,6 +1,6 @@
 // packages
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 import _ from 'lodash'
 // components
 import Hamburger from '../../components/hamburger/Hamburger'
@@ -10,26 +10,29 @@ import useLesson from './useLesson'
 import style from './lesson.module.scss'
 
 const Lesson = () => {
-  const { data } = useLesson()
+  const { arrayLessons, stars } = useLesson()
+  const { level } = useParams()
   return (
       <>
           <div className={style.main}>
               <Hamburger/>
               <div className={style.lesson}>
-                  {_.map(data, (less) =>
-                      <div className={style.backLesson} key={less._id}>
-                          <h1 className={style.caption}>
-                              Урок #
-                              {less.number}
-                          </h1>
-                          <div className={style.stars}>
-                              {less.stars}
+                  {_.map(arrayLessons, (less) =>
+                      <NavLink key={less.number} to={`/programEng/${level}/exercise/${less.number}`}>
+                          <div className={style.backLesson}>
+                              <h1 className={style.caption}>
+                                  Урок #
+                                  {less.number}
+                              </h1>
+                              <div className={style.star}>
+                                  {stars}
+                              </div>
+
+                              <img alt={'huy'} className={style.backImg} src={less.img}/>
+
+                              <h1 className={style.captionTheme}>{less.title}</h1>
                           </div>
-                          <NavLink to={'/exercise'}>
-                              <img alt={'huy'} className={style.backImg} src={less.imgLesson}/>
-                          </NavLink>
-                          <h1 className={style.captionTheme}>{less.title}</h1>
-                      </div>
+                      </NavLink>
                   )}
               </div>
           </div>

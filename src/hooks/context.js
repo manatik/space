@@ -18,6 +18,10 @@ export const ContextProvider = (props) => {
   const [id, setId] = useState('')
   const [limit, setLimit] = useState(4)
   const [skip, setSkip] = useState(0)
+  //
+  const [arrayLessons, setArrayLessons] = useState([])
+  const [arrayWords, setArrayWords] = useState([])
+  const [arraySentence, setArraySentence] = useState([])
 
   // объект для импорта
   const variablesContext = {
@@ -41,8 +45,14 @@ export const ContextProvider = (props) => {
       setModalForm
     },
     varLessons: {
+      arrayLessons,
+      arraySentence,
+      arrayWords,
       id,
       limit,
+      setArrayLessons,
+      setArraySentence,
+      setArrayWords,
       setId,
       setLimit,
       setSkip,
