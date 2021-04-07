@@ -1,0 +1,49 @@
+.main {
+    background: url('https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Lesson%2FbackgroundLesson.png?alt=media&token=9480e93d-ba43-475a-9e9b-38a042b676d7') no-repeat left top / cover;
+}
+
+.lesson {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: auto;
+}
+
+.backLesson {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #6743d0;
+    border-radius: 60px;
+    width: 400px;
+    height: 500px;
+    margin-left: 30px;
+    padding: 10px;
+}
+
+.caption {
+    font-size: 2vh;
+    color: white;
+}
+
+.star {
+    display: flex;
+    justify-content: center;
+    width: 7vh;
+    margin-bottom: 10px;
+}
+
+.backImg {
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.captionTheme {
+    font-size: 3vh;
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+}
+

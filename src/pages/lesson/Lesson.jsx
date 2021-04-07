@@ -7,7 +7,7 @@ import Hamburger from '../../components/hamburger/Hamburger'
 // hooks
 import useLesson from './useLesson'
 // styles
-import style from './lesson.module.scss'
+import style from './lesson.module.css'
 
 const Lesson = () => {
   const { arrayLessons, stars } = useLesson()

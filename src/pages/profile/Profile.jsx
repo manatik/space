@@ -5,7 +5,7 @@ import { ToastContainer } from 'react-toastify'
 // components
 import Hamburger from '../../components/hamburger/Hamburger'
 // styles
-import style from './profile.module.scss'
+import style from './profile.module.css'
 import { useProfile } from './useProfile'
 // pictures
 const logo = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/logoCabinet.png?alt=media&token=f1190f8b-a1a4-4fe3-93d5-be801d12dfd6'
@@ -19,23 +19,19 @@ const Profile = () => {
           <div className={ style.main }>
               <Hamburger/>
               <div className={ style.content }>
+
                   <div className={ style.navBar }>
                       <img alt="logo" src={ logo }/>
-                      <div className={ style.spans }>
-                          <span className={ style.span } onClick={() => setToggle(false)}>
+                      <div className={ style.pagesProfile }>
+                          <span className={ style.pageProfile } onClick={() => setToggle(false)}>
                               <NavLink className={ style.navLink } to='/profile'>Ваш профиль</NavLink>
                           </span>
-                          <span className={ style.span } onClick={ editProfile }>
+                          <span className={ style.pageProfile } onClick={ editProfile }>
                               <NavLink className={ style.navLink } to='/profile'>Редактировать профиль</NavLink>
-                          </span>
-                          <span className={ style.span }>
-                              <NavLink className={ style.navLink } to='/'>линк 3</NavLink>
-                          </span>
-                          <span className={ style.span }>
-                              <NavLink className={ style.navLink } to='/'>линк 4</NavLink>
                           </span>
                       </div>
                   </div>
+
                   <div className={ style.profileField }>
                       <div className={ style.profile }>
                           <div className={ style.divImgProfile }>
@@ -52,8 +48,6 @@ const Profile = () => {
                                 <span className={ style.span }>
                                     { `Телефон: ${dataUser.phone}` }
                                 </span>
-                                <span className={ style.span }>{ dataUser.google }</span>
-                                <span className={ style.span }>{ dataUser.vk }</span>
                                 {/*eslint-disable*/ }
                 </div>
                 : <div className={ style.inputs }>
@@ -62,9 +56,6 @@ const Profile = () => {
                          type="text"/>
                   <input className={ style.input } name='phone' onChange={ handleChange } placeholder='Телефон'
                          type="text"/>
-                  {/*<input className={ style.input } name='google' onChange={ handleChange } placeholder='Гугл'*/}
-                  {/*       type="text"/>*/}
-                  {/*<input className={ style.input } name='vk' onChange={ handleChange } placeholder='ВК' type="text"/>*/}
                 </div> }
               <div className={ style.btnProfile }>
                 { toggle &&

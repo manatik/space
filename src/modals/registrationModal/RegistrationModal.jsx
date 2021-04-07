@@ -5,7 +5,7 @@ import { useContextProvider } from '../../hooks/context'
 import { useHttp } from '../../api/api'
 import { useMessage } from '../../hooks/msg.hook'
 // styles
-import styles from '../../components/modal/modal.module.scss'
+import styles from '../../components/modal/modal.module.css'
 
 const RegistrationModal = () => {
   const {

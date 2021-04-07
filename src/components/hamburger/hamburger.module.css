@@ -27,6 +27,7 @@
 .programSpan {
   margin-left: 5rem;
 }
+
 .dropDownContent {
   top: 40px;
   display: none;
@@ -58,6 +59,7 @@
   flex-direction: column;
   margin: auto 10% auto auto;
 }
+
 .userImg {
   filter: invert(100%) sepia(1%) saturate(0%) hue-rotate(61deg) brightness(111%) contrast(100%);
 }

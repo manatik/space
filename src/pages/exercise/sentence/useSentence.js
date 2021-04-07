@@ -1,3 +1,6 @@
+import { useContextProvider } from '../../../hooks/context'
+
 export const useSentence = () => {
-  return { }
+  const { index: { index } } = useContextProvider()
+  return { index }
 }

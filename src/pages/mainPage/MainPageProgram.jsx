@@ -5,7 +5,7 @@ import _ from 'lodash'
 // hooks
 import useMainPage from './useMainPage'
 // styles
-import style from './mainPageProgram.module.scss'
+import style from './mainPageProgram.module.css'
 
 const MainPageProgram = () => {
   const { lishki, setText, text } = useMainPage()

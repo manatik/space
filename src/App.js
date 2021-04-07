@@ -3,13 +3,12 @@ import React from 'react'
 // components
 import Router from './routing/router'
 // hooks
-// styles
-import style from './app.module.scss'
 import { useContextProvider } from './hooks/context'
+// styles
+import style from './app.module.css'
 
 const App = () => {
   const { authenticate: { isAuthenticated } } = useContextProvider() || {}
-
   const routes = Router(isAuthenticated)
 
   return (

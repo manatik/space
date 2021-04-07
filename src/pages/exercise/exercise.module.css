@@ -1,0 +1,41 @@
+.main {
+    background: url('https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Exercise%2FbackgroundExercise.png?alt=media&token=f64c6b1d-7616-4337-8e05-562414d0f571') no-repeat left top / cover;
+    height: 100vh;
+}
+
+.exercise {
+    display: grid;
+    grid-template-areas: "words sentence";
+    grid-template-columns: 1fr 1fr;
+    margin-top: 200px;
+}
+
+.words {
+    grid-area: words;
+}
+
+.sentence {
+    grid-area: sentence;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    color: white;
+    font-size: 40px;
+}
+
+.img {
+    margin-bottom: 20px;
+    width: 200px;
+}
+
+.textField {
+    background-color: #27536B;
+    padding: 10px 30px;
+    border-radius: 30px;
+}
+
+

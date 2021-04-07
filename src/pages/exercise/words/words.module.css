@@ -1,0 +1,62 @@
+.main {
+    background: url('https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Exercise%2FWords%2FbackgroundWords.png?alt=media&token=8031459b-e7ff-4976-9f68-4fea9cbab08e') no-repeat left / cover;
+    height: 100vh;
+    overflow: auto;
+}
+
+.content {
+    display: grid;
+    grid-template: "img words empty";
+    grid-template-columns: 5fr 3fr 2fr;
+    margin-top: 8%;
+}
+
+.divImageWord {
+    display: flex;
+    justify-content: center;
+}
+
+.imageWord {
+    width: 300px;
+    height: 300px;
+    background-color: #5289E2;
+    padding: 30px 30px;
+    border-radius: 30px;
+}
+
+.divWords {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.word {
+    color: white;
+    background-color: #5289E2;
+    font-size: 65px;
+    padding: 20px 200px;
+    border-radius: 30px;
+    margin-bottom: 6%;
+}
+
+.divTranslate {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.translate {
+    color: white;
+    background-color: #5289E2;
+    font-size: 35px;
+    padding: 15px 100px;
+    border-radius: 90px;
+    margin-top: 3%;
+    cursor: pointer;
+}
+
+.empty {
+    grid-area: empty;
+}
+
+

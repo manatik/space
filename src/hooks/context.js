@@ -6,14 +6,14 @@ export const useContextProvider = () => useContext(Context)
 
 export const ContextProvider = (props) => {
   // флаг авторизации
-  const [isAuthenticated, setIsAuthenticated] = useState(true)
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
   // флаги модальных окон
   const [isModalReg, setIsModalReg] = useState(false)
   const [isModalLogin, setIsModalLogin] = useState(false)
   // поля модального окна
   const [modalForm, setModalForm] = useState({})
   // данные пользователя в профиле
-  const [dataUser, setDataUser] = useState({ email: '', google: '', name: '', phone: '', vk: '' })
+  const [dataUser, setDataUser] = useState({})
   // параметры для базы данных
   const [id, setId] = useState('')
   const [limit, setLimit] = useState(4)
@@ -23,11 +23,16 @@ export const ContextProvider = (props) => {
   const [arrayWords, setArrayWords] = useState([])
   const [arraySentence, setArraySentence] = useState([])
 
+  const [index, setIndex] = useState(0)
+
   // объект для импорта
   const variablesContext = {
     authenticate: {
       isAuthenticated,
       setIsAuthenticated
+    },
+    index: {
+      index, setIndex
     },
     loginModal: {
       isModalLogin,

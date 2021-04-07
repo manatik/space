@@ -9,11 +9,11 @@ export const useExercise = () => {
   const { varLessons: { arraySentence, arrayWords, setArraySentence, setArrayWords } } = useContextProvider()
   const { request } = useHttp()
   const { level, number } = useParams()
-  const id = [number, level]
+  const id = { level, number }
 
   const getExercise = async () => {
     try {
-      const getDataExercise = await request('/api/exercises', 'POST', { id })
+      const getDataExercise = await request('/api/exercises', 'POST', { ...id })
       setArraySentence(getDataExercise.sentence)
       setArrayWords(getDataExercise.words)
     } catch (e) {
@@ -26,5 +26,6 @@ export const useExercise = () => {
     }
     // eslint-disable-next-line
   }, [])
+
   return { arraySentence, arrayWords }
 }

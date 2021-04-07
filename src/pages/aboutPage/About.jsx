@@ -3,7 +3,7 @@ import React from 'react'
 // components
 import Header from '../../header/Header'
 // styles
-import style from './about.module.scss'
+import style from './about.module.css'
 // pictures
 const offerImg = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/joda.png?alt=media&token=f08934c0-ba3c-4f29-be95-eedc8b7854b3'
 

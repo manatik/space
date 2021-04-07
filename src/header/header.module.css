@@ -1,0 +1,70 @@
+.headerDiv {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.header {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-areas: "logo txtLogo links enter";
+    grid-template-columns: 1fr 2.5fr 8fr 3fr;
+    padding-top: 30px;
+}
+
+.logoHeader {
+    grid-area: logo;
+    width: 80px;
+    height: 80px;
+}
+
+.logoHeaderBack {
+    grid-area: logo;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    background: #141414;
+    cursor: pointer;
+}
+
+.txtLogoHeader {
+    grid-area: txtLogo;
+    font-size: 48px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.link {
+    grid-area: links;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    margin-left: 15px;
+}
+
+.enter {
+    grid-area: enter;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.enter:hover {
+    color: #ffffff;
+}
+
+.link:hover {
+    color: white;
+}
+
+.enter:hover .userImg {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(201deg) brightness(103%) contrast(102%);
+}
+
+.userImg {
+    filter: invert(0%) sepia(1%) saturate(4%) hue-rotate(320deg) brightness(97%) contrast(104%);
+    margin-left: 10px;
+}
+

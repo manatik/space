@@ -4,7 +4,7 @@ import { NavLink, useParams } from 'react-router-dom'
 // components
 import Hamburger from '../../components/hamburger/Hamburger'
 // styles
-import style from './exercise.module.scss'
+import style from './exercise.module.css'
 // pictures
 const word = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Exercise%2FimgWords.png?alt=media&token=88d7d96e-3ec9-43ae-9dd6-92a17e035824'
 const sen = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Exercise%2FimgSentence.png?alt=media&token=14f93026-d6e0-418b-9072-9f66510adb48'

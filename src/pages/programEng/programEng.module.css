@@ -1,0 +1,60 @@
+.main {
+    background: url('https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/ProgramEng%2FbackgroundProgramEng.png?alt=media&token=4450b8cd-5783-4c39-9d1b-314307d59352') no-repeat bottom / cover;
+    height: 100vh;
+}
+
+.hamburger {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.caption {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    color: white;
+    margin-top: 3%;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3%;
+}
+
+.span {
+    margin-top: 2%;
+}
+
+.navLink {
+    font-size: 35px;
+    color: white;
+    text-decoration: none;
+    background-color: #391E6D;
+    border-radius: 109px;
+}
+
+.navLink:first-child {
+    padding: 10px 20px;
+}
+
+.navLink:nth-child(2) {
+    padding: 12px 30px;
+}
+
+.navLink:nth-child(3) {
+    padding: 14px 30px;
+}
+
+.navLink:nth-child(4) {
+    padding: 16px 35px;
+}
+
+.footer {
+    font-size: 40px;
+    color: white;
+    margin-top: 3%;
+}
+

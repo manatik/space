@@ -3,7 +3,7 @@ import React from 'react'
 // components
 import Hamburger from '../../../components/hamburger/Hamburger'
 // styles
-import style from './dialogs.module.scss'
+import style from './dialogs.module.css'
 
 const Dialogs = () => {
   return (

@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 import Hamburger from '../../components/hamburger/Hamburger'
 // hooks
 // styles
-import style from './programEng.module.scss'
+import style from './programEng.module.css'
 
 const ProgramEng = () => {
   const data = [
