@@ -1,20 +1,15 @@
 // packages
 import React, { useEffect } from 'react'
 // components
-import { useContextProvider } from '../../hooks/context'
-import { useHttp } from '../../api/api'
-import { useMessage } from '../../hooks/msg.hook'
+import { useContextProvider } from '../hooks/context'
+import { useHttp } from '../api/api'
+import { useMessage } from '../hooks/msg.hook'
 // styles
-import styles from '../../components/modal/modal.module.css'
+import styles from '../components/modal/modal.module.css'
 
 const RegistrationModal = () => {
   const {
-    registrationModal: {
-      modalForm,
-      setIsModalReg,
-      setModalForm
-    } = {},
-    loginModal: { setIsModalLogin }
+    modals: { modalForm, setIsModalLogin, setIsModalReg, setModalForm }
   } = useContextProvider() || {}
 
   const message = useMessage()

@@ -18,8 +18,7 @@ const Header = () => {
   const { logout } = useAuth()
   const {
     authenticate: { isAuthenticated, setIsAuthenticated },
-    loginModal: { setIsModalLogin },
-    registrationModal: { setIsModalReg }
+    modals: { setIsModalLogin, setIsModalReg }
   } = useContextProvider() || {}
 
   const logoutHandler = (e) => {

@@ -2,6 +2,7 @@
 import React, { createContext, useContext, useState } from 'react'
 
 const Context = createContext(null)
+
 export const useContextProvider = () => useContext(Context)
 
 export const ContextProvider = (props) => {
@@ -18,7 +19,7 @@ export const ContextProvider = (props) => {
   const [id, setId] = useState('')
   const [limit, setLimit] = useState(4)
   const [skip, setSkip] = useState(0)
-  //
+  // массивы данных по урокам
   const [arrayLessons, setArrayLessons] = useState([])
   const [arrayWords, setArrayWords] = useState([])
   const [arraySentence, setArraySentence] = useState([])
@@ -31,34 +32,29 @@ export const ContextProvider = (props) => {
       isAuthenticated,
       setIsAuthenticated
     },
-    index: {
-      index, setIndex
-    },
-    loginModal: {
+    modals: {
       isModalLogin,
+      isModalReg,
       modalForm,
       setIsModalLogin,
+      setIsModalReg,
       setModalForm
     },
     profile: {
       dataUser, setDataUser
-    },
-    registrationModal: {
-      isModalReg,
-      modalForm,
-      setIsModalReg,
-      setModalForm
     },
     varLessons: {
       arrayLessons,
       arraySentence,
       arrayWords,
       id,
+      index,
       limit,
       setArrayLessons,
       setArraySentence,
       setArrayWords,
       setId,
+      setIndex,
       setLimit,
       setSkip,
       skip

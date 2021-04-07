@@ -5,9 +5,9 @@ import { ToastContainer } from 'react-toastify'
 // components
 import Header from '../../header/Header'
 import MainPageProgram from './MainPageProgram'
-import RegistrationModal from '../../modals/registrationModal/RegistrationModal'
+import RegistrationModal from '../../modals/RegistrationModal'
 import Modal from '../../components/modal/Modal'
-import LoginModal from '../../modals/loginModal/LoginModal'
+import LoginModal from '../../modals/LoginModal'
 // hooks
 import { useContextProvider } from '../../hooks/context'
 // styles
@@ -18,17 +18,8 @@ const iodine = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.co
 
 const MainPage = () => {
   const {
-    authenticate: {
-      isAuthenticated
-    },
-    loginModal: {
-      isModalLogin,
-      setIsModalLogin
-    },
-    registrationModal: {
-      isModalReg,
-      setIsModalReg
-    }
+    authenticate: { isAuthenticated },
+    modals: { isModalLogin, isModalReg, setIsModalLogin, setIsModalReg }
   } = useContextProvider() || {}
 
   return (
