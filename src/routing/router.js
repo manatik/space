@@ -9,7 +9,6 @@ import Lesson from '../pages/lesson/Lesson'
 import Exercise from '../pages/exercise/Exercise'
 import Words from '../pages/exercise/words/Words'
 import Sentence from '../pages/exercise/sentence/Sentence'
-import Dialogs from '../pages/exercise/dialogs/Dialogs'
 import Profile from '../pages/profile/Profile'
 // paths
 const lessonPath = '/programEng/:level'
@@ -28,7 +27,6 @@ const router = (isAuthenticated) => {
             <Route component={Exercise} exact path={exercisePath}/>
             <Route component={Words} exact path={wordsPath}/>
             <Route component={Sentence} exact path={sentencePath}/>
-            <Route component={Dialogs} exact path={'/dialog'}/>
             <Route component={Profile} exact path={'/profile'}/>
             <Redirect to={'/'}/>
         </Switch>

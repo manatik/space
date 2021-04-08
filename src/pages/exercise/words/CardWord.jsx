@@ -2,15 +2,8 @@
 import React from 'react'
 import _ from 'lodash'
 import style from './words.module.css'
-import { useWords } from "./useWords";
 
 const CardWord = (props) => {
-  const { setIndex, index } = useWords()
-
-  const answer = (e) => {
-    const id = e.target.outerText
-    id === props.translate[0] && setIndex(index + 1)
-    }
 
   return (
     <>
@@ -22,7 +15,7 @@ const CardWord = (props) => {
           <p className={ style.word }>{ props.word }</p>
           <div className={ style.divTranslate }>
             { _.map(props.translate, (value, index) =>
-              <p key={ index } className={ style.translate } onClick={ answer }>{ value }</p>
+              <p key={ index } className={ style.translate }>{ value }</p>
             ) }
           </div>
         </div>

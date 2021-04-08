@@ -3,20 +3,23 @@ import React from 'react'
 // components
 import Hamburger from '../../../components/hamburger/Hamburger'
 import CardSentence from './CardSentence'
+import Loader from '../../../components/loader/Loader'
 // hooks
 import { useExercise } from '../useExercise'
-import { useSentence } from './useSentence'
 // styles
 import style from './sentence.module.css'
 
 const Sentence = () => {
-  const { index } = useSentence()
-  const { arraySentence } = useExercise()
+  const { arrSentence, index, loading } = useExercise()
+
+  if (loading && arrSentence) {
+    return <><Loader/></>
+  }
   return (
       <>
           <div className={style.main}>
               <Hamburger/>
-              <CardSentence {...arraySentence[index]}/>
+              <CardSentence {...arrSentence[index]}/>
           </div>
       </>
   )

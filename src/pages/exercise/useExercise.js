@@ -1,31 +1,29 @@
 // packages
-import { useEffect } from 'react'
-// hooks
-import { useContextProvider } from '../../hooks/context'
-import { useHttp } from '../../api/api'
 import { useParams } from 'react-router-dom'
+import { useCallback, useEffect, useState } from 'react'
+// hooks
+import { useHttp } from '../../api/api'
 
 export const useExercise = () => {
-  const { varLessons: { arraySentence, arrayWords, setArraySentence, setArrayWords } } = useContextProvider()
-  const { request } = useHttp()
+  const { loading, request } = useHttp()
   const { level, number } = useParams()
-  const id = { level, number }
 
-  const getExercise = async () => {
+  const [arrWords, setArrWords] = useState([])
+  const [arrSentence, setArrSentence] = useState([])
+  const [index, setIndex] = useState(0)
+  const getExercises = useCallback(async () => {
     try {
-      const getDataExercise = await request('/api/exercises', 'POST', { ...id })
-      setArraySentence(getDataExercise.sentence)
-      setArrayWords(getDataExercise.words)
-    } catch (e) {
-    }
-  }
+      const exercise = await request('/api/exercises', 'POST', { level, number })
+      setArrWords(exercise.words)
+      setArrSentence(exercise.sentence)
+    } catch (e) {}
+    // eslint-disable-next-line
+  }, [{ arrSentence, arrWords }])
 
   useEffect(() => {
-    if (arraySentence || arrayWords) {
-      getExercise().then()
-    }
+    getExercises().then()
     // eslint-disable-next-line
-  }, [])
+  }, [number, level])
 
-  return { arraySentence, arrayWords }
+  return { arrSentence, arrWords, index, loading, setIndex }
 }

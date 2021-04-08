@@ -1,17 +1,20 @@
-/* eslint-disable */
+// packages
 import React from 'react'
+import PropTypes from 'prop-types'
+// style
 import style from './sentence.module.css'
 
 const CardSentence = (props) => {
-  console.log(props)
+  const { rule, sentence, sentenceAnswer } = props
+
   return (
       <>
           <div className={style.content}>
               <div className={style.rules}>
-                  {props.rule}
+                  {rule}
               </div>
               <div className={style.sentence}>
-                  {props.sentence}
+                  {sentence}
               </div>
               <div className={style.answer}>
                   <input
@@ -24,10 +27,15 @@ const CardSentence = (props) => {
                   />
                   <button className={style.buttonSentence} type='button'>Проверить</button>
               </div>
-              <span>{props.sentenceAnswer}</span>
+              <span>{sentenceAnswer}</span>
           </div>
       </>
   )
 }
 
+CardSentence.propTypes = {
+  rule: PropTypes.string.isRequired,
+  sentence: PropTypes.string.isRequired,
+  sentenceAnswer: PropTypes.string.isRequired
+}
 export default CardSentence

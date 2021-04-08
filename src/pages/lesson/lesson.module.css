@@ -10,14 +10,33 @@
     overflow: auto;
 }
 
+.prevArrow, .nextArrow {
+    width: 100px;
+    height: 200px;
+}
+
+.prevArrow {
+    transform: scale(-1, 1);
+    margin-right: -20px;
+}
+
+.nextArrow {
+    margin-left: 10px;
+}
+
+.nextArrow:hover, .prevArrow:hover {
+    filter: invert(100%) sepia(0%) saturate(7496%) hue-rotate(347deg) brightness(99%) contrast(103%);
+    cursor: pointer;
+}
+
 .backLesson {
     display: flex;
     align-items: center;
     flex-direction: column;
     background-color: #6743d0;
     border-radius: 60px;
-    width: 400px;
-    height: 500px;
+    width: 350px;
+    height: 400px;
     margin-left: 30px;
     padding: 10px;
 }
@@ -30,13 +49,13 @@
 .star {
     display: flex;
     justify-content: center;
-    width: 7vh;
+    width: 5vh;
     margin-bottom: 10px;
 }
 
 .backImg {
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 200px;
     border-radius: 10px;
 }
 
