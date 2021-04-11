@@ -7,18 +7,28 @@ export const useContextProvider = () => useContext(Context)
 
 export const ContextProvider = (props) => {
   // флаг авторизации
-  const [isAuthenticated, setIsAuthenticated] = useState(true)
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
   // флаги модальных окон
   const [isModalReg, setIsModalReg] = useState(false)
   const [isModalLogin, setIsModalLogin] = useState(false)
   // поля модального окна
   const [modalForm, setModalForm] = useState({})
 
+  const [data, setData] = useState([])
+  const [index, setIndex] = useState(0)
+
   // объект для импорта
   const variablesContext = {
     authenticate: {
       isAuthenticated,
       setIsAuthenticated
+    },
+    data: {
+      data, setData
+    },
+    index: {
+      index,
+      setIndex
     },
     modals: {
       isModalLogin,

@@ -29,6 +29,10 @@
     cursor: pointer;
 }
 
+.link {
+    text-decoration: none;
+}
+
 .backLesson {
     display: flex;
     align-items: center;
@@ -41,6 +45,10 @@
     padding: 10px;
 }
 
+.backLesson:hover {
+    background-color: #4927af;
+}
+
 .caption {
     font-size: 2vh;
     color: white;
@@ -51,6 +59,10 @@
     justify-content: center;
     width: 5vh;
     margin-bottom: 10px;
+}
+
+.starActive {
+    filter: invert(40%) sepia(92%) saturate(2362%) hue-rotate(166deg) brightness(102%) contrast(101%);
 }
 
 .backImg {

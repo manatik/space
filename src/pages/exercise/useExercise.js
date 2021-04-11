@@ -1,29 +1,82 @@
-// packages
-import { useParams } from 'react-router-dom'
+
+import { useParams, useHistory } from 'react-router-dom'
 import { useCallback, useEffect, useState } from 'react'
-// hooks
+import { toast } from 'react-toastify'
+import { useAuth } from '../../hooks/auth.hook'
+import { useContextProvider } from '../../hooks/context'
 import { useHttp } from '../../api/api'
 
 export const useExercise = () => {
+  const { index: { index, setIndex } } = useContextProvider()
   const { loading, request } = useHttp()
+  const { userId } = useAuth()
   const { level, number } = useParams()
+  const history = useHistory()
 
   const [arrWords, setArrWords] = useState([])
   const [arrSentence, setArrSentence] = useState([])
-  const [index, setIndex] = useState(0)
-  const getExercises = useCallback(async () => {
+  const [answer, setAnswer] = useState('')
+
+  const handleClickWords = (e) => {
+    const value = e.target.outerText
+    if (value === arrWords[index].translate[0]) {
+      toast.dark('Верно', { autoClose: 1000 })
+      setIndex(index + 1)
+    } else {
+      toast.dark('Неверно', { autoClose: 1000 })
+      setIndex(index + 1)
+    }
+    if (index === (arrWords.length - 1)) {
+      setIndex(0)
+      progressUser(1, 0).then(() => history.goBack())
+    }
+  }
+
+  const handleClickSentence = () => {
+    if (answer.toLowerCase() === arrSentence[index].sentenceAnswer.toLowerCase()) {
+      toast.dark('Верно', { autoClose: 1000 })
+      setIndex(index + 1)
+      setAnswer('')
+    } else {
+      toast.dark('Неверно', { autoClose: 1000 })
+      setIndex(index + 1)
+      setAnswer('')
+    }
+    if (index === arrSentence.length - 1) {
+      setIndex(0)
+      setAnswer('')
+      progressUser(0, 1).then(() => history.goBack())
+    }
+  }
+
+  const progressUser = async (passWords, passSentences) => {
     try {
-      const exercise = await request('/api/exercises', 'POST', { level, number })
-      setArrWords(exercise.words)
-      setArrSentence(exercise.sentence)
+      await request('/api/progress', 'POST', { level, number, passSentences, passWords, userId })
+    } catch (e) {}
+  }
+
+  const getSentences = useCallback(async () => {
+    try {
+      const exercise = await request('/api/sentences', 'POST', { level, number })
+      setArrSentence(exercise)
     } catch (e) {}
     // eslint-disable-next-line
-  }, [{ arrSentence, arrWords }])
+  }, [{ arrSentence }])
+
+  const getWords = useCallback(async () => {
+    try {
+      const exercise = await request('/api/words', 'POST', { level, number })
+      setArrWords(exercise)
+    } catch (e) {}
+    // eslint-disable-next-line
+  }, [])
 
   useEffect(() => {
-    getExercises().then()
+    getWords().then()
+    getSentences().then()
+    return () => { setArrWords([]); setArrSentence([]) }
     // eslint-disable-next-line
   }, [number, level])
 
-  return { arrSentence, arrWords, index, loading, setIndex }
+  return { answer, arrSentence, arrWords, handleClickSentence, handleClickWords, index, loading, setAnswer, setIndex }
 }

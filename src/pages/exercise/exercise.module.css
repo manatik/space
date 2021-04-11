@@ -11,11 +11,21 @@
 }
 
 .words {
+    margin-left: 200px;
     grid-area: words;
 }
 
+.words:hover .textField {
+    background-color: #3f8fc1;
+}
+
 .sentence {
+    margin-right: 200px;
     grid-area: sentence;
+}
+
+.sentence:hover .textField {
+    background-color: #3f8fc1;
 }
 
 .link {

@@ -1,30 +1,25 @@
 // packages
-import React, { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 // hooks
 import { useHttp } from '../../api/api'
 import { useParams } from 'react-router-dom'
 // styles
-import style from './lesson.module.css'
-// pictures
-const star = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Lesson%2FRaiting.png?alt=media&token=f2aef50a-f04e-46a4-8577-c783e1d97d24'
+import { useContextProvider } from '../../hooks/context'
 
 export const useLesson = () => {
   const { loading, request } = useHttp()
   const { level } = useParams()
+  const { data: { data, setData } } = useContextProvider()
   const [parameters, setParameters] = useState({
     click: 0,
     count: 0,
     limit: 4,
     skip: 0
   })
-  const [data, setData] = useState([])
+  const [str, setStr] = useState({})
   const id = level
-  const stars =
-      <>
-          <img alt={'StarRating'} className={style.star} src={star}/>
-          <img alt={'StarRating'} className={style.star} src={star}/>
-          <img alt={'StarRating'} className={style.star} src={star}/>
-      </>
+  const dataUserFromLS = JSON.parse(localStorage.getItem('userData'))
+  const userId = dataUserFromLS.userId
 
   const nextLessons = () => {
     if (parameters.click < parameters.count - 1) {
@@ -40,8 +35,9 @@ export const useLesson = () => {
 
   const getLessons = useCallback(async () => {
     try {
-      const getDataLessons = await request('/api/lessons', 'POST', { id, ...parameters })
+      const getDataLessons = await request('/api/lessons', 'POST', { id, ...parameters, userId })
       setData(getDataLessons.getData)
+      setStr(getDataLessons.str)
       setParameters(prev => { return { ...prev, count: getDataLessons.count } })
     } catch (e) {
     }
@@ -57,5 +53,5 @@ export const useLesson = () => {
     setParameters(prev => { return { ...prev, click: 0, skip: 0 } })
   }, [level])
 
-  return { data, loading, nextLessons, prevLessons, setData, setParameters, stars }
+  return { data, loading, nextLessons, parameters, prevLessons, setData, setParameters, str }
 }

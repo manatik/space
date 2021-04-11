@@ -5,13 +5,12 @@ import Hamburger from '../../../components/hamburger/Hamburger'
 import CardWord from './CardWord'
 import Loader from '../../../components/loader/Loader'
 // hooks
-import { useExercise } from '../useExercise'
 // styles
 import style from './words.module.css'
+import { useExercise } from '../useExercise'
 
 const Words = () => {
   const { arrWords, index, loading } = useExercise()
-
   if (loading && arrWords) {
     return <><Loader/></>
   }

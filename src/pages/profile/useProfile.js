@@ -6,11 +6,11 @@ import { useMessage } from '../../hooks/msg.hook'
 export const useProfile = () => {
   const { clearError, error, loading, request } = useHttp()
   const {
-    loginModal: { modalForm, setModalForm } = {},
-    profile: { dataUser, setDataUser } = {}
+    modals: { modalForm, setModalForm } = {},
+    data: { data, setData } = {}
   } = useContextProvider() || {}
-
   const message = useMessage()
+
   const [toggle, setToggle] = useState(false)
   const dataUserFromLS = JSON.parse(localStorage.getItem('userData'))
   const id = dataUserFromLS.userId
@@ -39,7 +39,7 @@ export const useProfile = () => {
   const getProfileData = useCallback(async () => {
     try {
       const getDataUser = await request('/api/profile/data', 'POST', { id })
-      setDataUser({
+      setData({
         email: getDataUser.data.email,
         imageProfile: getDataUser.data.imageProfile,
         name: getDataUser.data.name,
@@ -51,11 +51,11 @@ export const useProfile = () => {
   }, [])
 
   useEffect(() => {
-    if (dataUser) {
+    if (data) {
       getProfileData().then()
     }
     // eslint-disable-next-line
-  }, [])
+  }, [!toggle])
 
-  return { dataUser, editProfile, handleChange, loading, saveProfile, setToggle, toggle }
+  return { data, editProfile, handleChange, loading, saveProfile, setToggle, toggle }
 }

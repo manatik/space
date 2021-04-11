@@ -7,12 +7,16 @@ import Hamburger from '../../components/hamburger/Hamburger'
 // styles
 import style from './profile.module.css'
 import { useProfile } from './useProfile'
+import Loader from '../../components/loader/Loader'
 // pictures
 const logo = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/logoCabinet.png?alt=media&token=f1190f8b-a1a4-4fe3-93d5-be801d12dfd6'
 
 const Profile = () => {
-  const { dataUser, editProfile, handleChange, loading, saveProfile, setToggle, toggle } = useProfile() || {}
+  const { data, editProfile, handleChange, loading, saveProfile, setToggle, toggle } = useProfile() || {}
 
+  if (loading) {
+    return <><Loader/></>
+  }
   return (
       <>
           <ToastContainer/>
@@ -35,18 +39,18 @@ const Profile = () => {
                   <div className={ style.profileField }>
                       <div className={ style.profile }>
                           <div className={ style.divImgProfile }>
-                              <img alt="" className={ style.imgProfile } src={ dataUser.imageProfile }/>
+                              <img alt="" className={ style.imgProfile } src={ data.imageProfile }/>
                           </div>
                           { !toggle
                             ? <div className={ style.profileFields }>
                                 <span className={ style.span }>
-                                    { `Имя: ${dataUser.name}` }
+                                    { `Имя: ${data.name}` }
                                 </span>
                                 <span className={ style.span }>
-                                    { `E-mail: ${dataUser.email}` }
+                                    { `E-mail: ${data.email}` }
                                 </span>
                                 <span className={ style.span }>
-                                    { `Телефон: ${dataUser.phone}` }
+                                    { `Телефон: ${data.phone}` }
                                 </span>
                                 {/*eslint-disable*/ }
                 </div>
@@ -68,13 +72,13 @@ const Profile = () => {
                 Тут наверно будет дата пикер
               </div>
               <div className={ style.progressField2 }>
-                <h1 className={ style.lvls }>Levels</h1>
+                <h1 className={ style.lvls }>Прогресс</h1>
                 <hr/>
                 <ul className={ style.ul }>
-                  <li>fdfasfsafa</li>
-                  <li>fdfasfasfsaf</li>
-                  <li>fdfsafafafa</li>
-                  <li>fdfasfasfafs</li>
+                  <li>0 из 14</li>
+                  <li>0 из 14</li>
+                  <li>0 из 14</li>
+                  <li>0 из 14</li>
                 </ul>
               </div>
             </div>
