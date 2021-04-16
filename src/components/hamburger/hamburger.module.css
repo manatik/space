@@ -67,7 +67,6 @@
 .buttonWrapper {
   position: absolute;
   top: 0;
-  bottom: 0;
   z-index: 2;
 }
 
@@ -89,7 +88,6 @@
   background: #ffffff;
   border-radius: 8px;
   opacity: 1;
-  left: 0;
   transform: rotate(0deg);
   transition: .25s ease-in-out;
 }
@@ -126,6 +124,49 @@
   left: 8px;
 }
 
-@media screen and (min-width: 320px) and (max-width: 400px) {
+@media screen and (max-width: 600px) {
+  .main {
+    margin-right: 10px;
+  }
 
+  .hamburger {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 70px;
+  }
+
+  .programSpan {
+    display: none;
+  }
+
+  .dropDownContent {
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .navLink {
+    font-size: 30px;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+
+  .enter {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0;
+  }
+
+  .userImg {
+    margin-left: 5px;
+  }
+
+  .buttonWrapper {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+  }
 }

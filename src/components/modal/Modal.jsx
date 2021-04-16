@@ -15,7 +15,7 @@ const Modal = ({ children, isClose, isOpen }) => {
               <div className={styles.modal}>
                   <div className={styles.band}/>
                   <img alt={'modalImg'} className={styles.modalImg} src={img}/>
-                  <span className={styles.close} onClick={() => isClose(false)}>X</span>
+                  <span className={styles.close} onClick={() => isClose(false)}>&times;</span>
                   {children}
               </div>
           </div>}

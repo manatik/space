@@ -78,3 +78,32 @@
     margin-top: 10px;
 }
 
+@media screen and (max-width: 600px) {
+    .lesson {
+        justify-content: flex-start;
+    }
+
+    .prevArrow, .nextArrow {
+        width: 50px;
+        height: 90px;
+    }
+
+    .backLesson {
+        border-radius: 40px;
+        width: 250px;
+        height: 300px;
+    }
+
+    .star {
+        width: 5vh;
+    }
+
+    .backImg {
+        height: 160px;
+        width: 160px;
+    }
+
+    .captionTheme {
+        font-size: 20px;
+    }
+}

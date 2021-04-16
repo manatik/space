@@ -61,4 +61,39 @@
     grid-area: empty;
 }
 
+@media screen and (max-width: 600px) {
+    .content {
+        display: block;
+        margin-top: 100px;
+    }
 
+    .imageWord {
+        width: 220px;
+        height: 200px;
+        padding: 0;
+    }
+
+    .divWords {
+        margin-top: 20px;
+        justify-content: center;
+    }
+
+    .word {
+        background-color: #5289E2;
+        font-size: 35px;
+        padding: 10px 0;
+        border-radius: 30px;
+        margin-bottom: 6%;
+        width: 300px;
+    }
+
+    .divTranslate {
+        align-items: center;
+    }
+
+    .translate {
+        font-size: 25px;
+        padding: 15px 50px;
+        margin-top: 5%;
+    }
+}

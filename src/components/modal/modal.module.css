@@ -91,3 +91,30 @@
   font-size: 20px;
   margin-top: 10px;
 }
+
+@media screen and (max-width: 600px) {
+  .modal {
+    background: #FFF4F4 url('https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Modal%2FbackModal.png?alt=media&token=cd7c3621-40f4-4197-829d-35ce7dfcd6c5') no-repeat center / cover;
+    height: 600px;
+    width: 300px;
+    margin: 8% auto;
+  }
+  .band {
+    height: 70px;
+  }
+  .modalImg {
+    width: 150px;
+    margin: -90px 0 0 75px;
+  }
+  .input {
+    width: 250px;
+    height: 20px;
+    font-size: 16px;
+  }
+  .btn {
+    margin-top: 15px;
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+  }
+}

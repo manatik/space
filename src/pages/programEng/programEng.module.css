@@ -58,3 +58,37 @@
     margin-top: 3%;
 }
 
+@media screen and (max-width: 600px) {
+    .caption {
+        display: flex;
+        justify-content: center;
+        font-size: 25px;
+        color: white;
+        margin-top: 30%;
+        margin-left: 20%;
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 10%;
+    }
+
+    .span {
+        margin-top: 9%;
+    }
+    .navLink {
+        font-size: 25px;
+        color: white;
+        text-decoration: none;
+        background-color: #391E6D;
+        border-radius: 109px;
+    }
+
+    .footer {
+        font-size: 20px;
+        color: white;
+        margin-top: 13%;
+    }
+}
