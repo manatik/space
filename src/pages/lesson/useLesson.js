@@ -9,7 +9,7 @@ import { useContextProvider } from '../../hooks/context'
 export const useLesson = () => {
   const { loading, request } = useHttp()
   const { level } = useParams()
-  const { data: { data, setData } } = useContextProvider()
+  const { data: { dataLessons, setDataLessons } } = useContextProvider()
   const [parameters, setParameters] = useState({
     click: 0,
     count: 0,
@@ -36,13 +36,14 @@ export const useLesson = () => {
   const getLessons = useCallback(async () => {
     try {
       const getDataLessons = await request('/api/lessons', 'POST', { id, ...parameters, userId })
-      setData(getDataLessons.getData)
+      console.log(getDataLessons)
+      setDataLessons(getDataLessons.getData)
       setStr(getDataLessons.str)
       setParameters(prev => { return { ...prev, count: getDataLessons.count } })
     } catch (e) {
     }
     // eslint-disable-next-line
-  }, [{ ...parameters }])
+  }, [{ ...parameters, level }])
 
   useEffect(() => {
     getLessons().then()
@@ -53,5 +54,5 @@ export const useLesson = () => {
     setParameters(prev => { return { ...prev, click: 0, skip: 0 } })
   }, [level])
 
-  return { data, loading, nextLessons, parameters, prevLessons, setData, setParameters, str }
+  return { dataLessons, loading, nextLessons, parameters, prevLessons, setDataLessons, setParameters, str }
 }

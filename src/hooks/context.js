@@ -15,6 +15,7 @@ export const ContextProvider = (props) => {
   const [modalForm, setModalForm] = useState({})
 
   const [data, setData] = useState([])
+  const [dataLessons, setDataLessons] = useState([])
   const [index, setIndex] = useState(0)
 
   // объект для импорта
@@ -24,7 +25,10 @@ export const ContextProvider = (props) => {
       setIsAuthenticated
     },
     data: {
-      data, setData
+      data,
+      dataLessons,
+      setData,
+      setDataLessons
     },
     index: {
       index,

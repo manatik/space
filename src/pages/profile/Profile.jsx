@@ -2,19 +2,21 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
+import _ from 'lodash'
 // components
 import Hamburger from '../../components/hamburger/Hamburger'
+import Loader from '../../components/loader/Loader'
+// hooks
+import { useProfile } from './useProfile'
 // styles
 import style from './profile.module.css'
-import { useProfile } from './useProfile'
-import Loader from '../../components/loader/Loader'
 // pictures
 const logo = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/logoCabinet.png?alt=media&token=f1190f8b-a1a4-4fe3-93d5-be801d12dfd6'
 
 const Profile = () => {
-  const { data, editProfile, handleChange, loading, saveProfile, setToggle, toggle } = useProfile() || {}
+  const { data, editProfile, handleChange, loading, progress, saveProfile, setToggle, toggle } = useProfile() || {}
 
-  if (loading) {
+  if (loading && !data) {
     return <><Loader/></>
   }
   return (
@@ -39,7 +41,7 @@ const Profile = () => {
                   <div className={ style.profileField }>
                       <div className={ style.profile }>
                           <div className={ style.divImgProfile }>
-                              <img alt="" className={ style.imgProfile } src={ data.imageProfile }/>
+                              <img alt="картинка пользователя" className={ style.imgProfile } src={ data.imageProfile }/>
                           </div>
                           { !toggle
                             ? <div className={ style.profileFields }>
@@ -74,12 +76,11 @@ const Profile = () => {
               <div className={ style.progressField2 }>
                 <h1 className={ style.lvls }>Прогресс</h1>
                 <hr/>
-                <ul className={ style.ul }>
-                  <li>0 из 14</li>
-                  <li>0 из 14</li>
-                  <li>0 из 14</li>
-                  <li>0 из 14</li>
-                </ul>
+                {_.map(progress, (value, index) =>
+                  <ul className={ style.ul }>
+                  <li key={index}>{value.name}: {value.completed} из {value.all} упражнений</li>
+                  </ul>
+                )}
               </div>
             </div>
           </div>

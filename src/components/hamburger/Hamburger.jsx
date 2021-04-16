@@ -24,11 +24,11 @@ const Hamburger = () => {
     },
     {
       id: '2',
-      title: 'Intermediate'
+      title: 'Pre-Intermediate'
     },
     {
       id: '3',
-      title: 'Pre-Intermediate'
+      title: 'Intermediate'
     },
     {
       id: '4',

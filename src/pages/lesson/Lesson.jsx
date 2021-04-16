@@ -16,10 +16,10 @@ const arrow = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com
 const star = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Lesson%2Fstar.png?alt=media&token=aa4b06fd-9759-4a8c-b54c-7230872e4b22'
 
 const Lesson = () => {
-  const { data, loading, nextLessons, prevLessons, str, parameters } = useLesson()
+  const { dataLessons, loading, nextLessons, prevLessons, str, parameters } = useLesson()
   const { level } = useParams()
 
-  if (loading || !data || !str || !parameters) {
+  if (loading && !dataLessons) {
     return <><Loader/></>
   }
   //console.log(str[5])
@@ -33,7 +33,7 @@ const Lesson = () => {
                       onClick={prevLessons}
                       src={arrow}
                   />
-                  {_.map(data, (less, index) =>
+                  {_.map(dataLessons, (less, index) =>
                       <NavLink className={style.link} key={less.number} to={`/programEng/${level}/exercise/${less.number}`}>
                           <div className={style.backLesson}>
                               <h1 className={style.caption}>

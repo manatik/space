@@ -27,8 +27,8 @@ export const useExercise = () => {
       setIndex(index + 1)
     }
     if (index === (arrWords.length - 1)) {
-      setIndex(0)
       progressUser(1, 0).then(() => history.goBack())
+      setIndex(0)
     }
   }
 
@@ -43,9 +43,9 @@ export const useExercise = () => {
       setAnswer('')
     }
     if (index === arrSentence.length - 1) {
+      progressUser(0, 1).then(() => history.goBack())
       setIndex(0)
       setAnswer('')
-      progressUser(0, 1).then(() => history.goBack())
     }
   }
 

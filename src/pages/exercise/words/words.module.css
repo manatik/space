@@ -31,12 +31,14 @@
 }
 
 .word {
+    text-align: center;
     color: white;
     background-color: #5289E2;
-    font-size: 65px;
-    padding: 20px 200px;
+    font-size: 55px;
+    padding: 20px 100px;
     border-radius: 30px;
     margin-bottom: 6%;
+    width: 350px;
 }
 
 .divTranslate {

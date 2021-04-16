@@ -1,4 +1,6 @@
+// packages
 import { useCallback, useEffect, useState } from 'react'
+// hooks
 import { useHttp } from '../../api/api'
 import { useContextProvider } from '../../hooks/context'
 import { useMessage } from '../../hooks/msg.hook'
@@ -12,6 +14,7 @@ export const useProfile = () => {
   const message = useMessage()
 
   const [toggle, setToggle] = useState(false)
+  const [progress, setProgress] = useState({})
   const dataUserFromLS = JSON.parse(localStorage.getItem('userData'))
   const id = dataUserFromLS.userId
 
@@ -45,11 +48,13 @@ export const useProfile = () => {
         name: getDataUser.data.name,
         phone: getDataUser.data.phone
       })
+      const getProgress = await request('/api/profile/progress', 'POST', { id })
+      setProgress(getProgress)
     } catch (e) {
     }
     // eslint-disable-next-line
   }, [])
-
+  console.log(progress)
   useEffect(() => {
     if (data) {
       getProfileData().then()
@@ -57,5 +62,5 @@ export const useProfile = () => {
     // eslint-disable-next-line
   }, [!toggle])
 
-  return { data, editProfile, handleChange, loading, saveProfile, setToggle, toggle }
+  return { data, editProfile, handleChange, loading, progress, saveProfile, setToggle, toggle }
 }
