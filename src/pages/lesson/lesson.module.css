@@ -1,13 +1,35 @@
 .main {
-    background: url('https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Lesson%2FbackgroundLesson.png?alt=media&token=9480e93d-ba43-475a-9e9b-38a042b676d7') no-repeat left top / cover;
+    background: url('https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Lesson%2FbackgroundLesson.svg?alt=media&token=df18a198-c937-4430-a301-ed0224014313') no-repeat left top / cover;
+}
+
+.lessonField {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 .lesson {
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    justify-content: flex-start;
     overflow: auto;
+    padding-bottom: 20px;
+}
+
+.lesson::-webkit-scrollbar {
+    height: 10px;
+}
+
+.lesson::-webkit-scrollbar-track {
+    -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+    background-color: #f9f9fd;
+    border-radius: 10px;
+}
+
+.lesson::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #6743d0;
 }
 
 .prevArrow, .nextArrow {

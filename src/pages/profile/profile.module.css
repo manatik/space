@@ -1,6 +1,7 @@
 .main {
-    background: url('https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Cabinet.png?alt=media&token=44a235b7-79ba-49f0-879d-62c018416b70') no-repeat bottom / cover;
+    background: url('https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Cabinet.svg?alt=media&token=e8847606-3c49-44eb-bec0-d51d7afc0fa3') no-repeat bottom / cover;
     height: 100vh;
+    overflow: auto;
 }
 
 .content {
@@ -170,5 +171,106 @@
     font-size: 25px;
 }
 
+@media screen and (max-width: 600px) {
+    .main {
+        height: 100%;
+        overflow: auto;
+    }
 
+    .content {
+        display: block;
+        margin-top: 10px;
+    }
+
+    .navBar {
+        margin-top: 10px;
+        height: auto;
+    }
+
+    .pagesProfile {
+        display: flex;
+        flex-direction: column;
+        margin: 5px 0 0 0;
+    }
+
+    .pageProfile {
+        margin-top: 20px;
+        font-size: 20px;
+        border-radius: 10px;
+    }
+
+    .profileFields {
+        margin: 30px 0;
+        font-size: 18px;
+    }
+
+    .profileField {
+        margin-top: 30px;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        margin-left: 0;
+        border-radius: 20px;
+        width: 90%;
+        padding: 5%;
+        height: auto;
+    }
+
+    .profile {
+        width: 100%;
+        display: block;
+        border-radius: 20px;
+    }
+
+    .span {
+        margin: 10px 0 0 20px;
+    }
+
+    .btn {
+        margin: 10px 0;
+        background-color: #5336bb;
+        font-size: 20px;
+        border-radius: 10px;
+    }
+
+
+    .progress {
+        margin-top: 20px;
+        width: 100%;
+        display: block;
+    }
+
+    .progressField1 {
+        display: block;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .progressField2 {
+        margin-top: 20px;
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    .lvls {
+        font-size: 25px;
+        margin: 0 0 10px 30px;
+
+    }
+
+    .ul {
+        margin-top: 10px;
+    }
+
+    .ul li {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+
+    .imgProfile {
+        margin-top: 20px;
+        width: 100px;
+        height: 100px;
+    }
+}
 

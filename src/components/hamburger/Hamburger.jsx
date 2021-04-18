@@ -8,7 +8,7 @@ import useHamburger from './useHamburger'
 // styles
 import style from './hamburger.module.css'
 
-const user = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Header%2Fuser%201.png?alt=media&token=895414f7-43d3-462d-a877-8798b7c7d14a'
+const user = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/user.svg?alt=media&token=3ae3631f-334e-4647-aabd-602eda12b959'
 
 const Hamburger = () => {
   const {

@@ -6,7 +6,7 @@ const useMainPage = () => {
 
   const lishki = [
     {
-      click: 'level 1',
+      click: 'level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1',
       id: 1,
       name: 'Elementary'
     },

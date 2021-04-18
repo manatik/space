@@ -7,21 +7,10 @@ import Loader from '../../../components/loader/Loader'
 import { useExercise } from '../useExercise'
 
 const CardWord = ({ alt, image, translate, word }) => {
-  const { handleClickWords } = useExercise()
+  const { handleClickWords, random } = useExercise()
 
   if (!translate) {
     return <><Loader/></>
-  }
-
-  function shuffle (arr) {
-    let j, temp
-    for (let i = arr.length - 1; i > 0; i--) {
-      j = Math.floor(Math.random() * (i + 1))
-      temp = arr[j]
-      arr[j] = arr[i]
-      arr[i] = temp
-    }
-    return arr
   }
 
   return (
@@ -37,7 +26,7 @@ const CardWord = ({ alt, image, translate, word }) => {
               <div className={ style.divWords }>
                   <p className={ style.word }>{ word }</p>
                   <div className={ style.divTranslate }>
-                      { _.map(shuffle(translate), (value, index) =>
+                      { _.map(random(translate), (value, index) =>
                           <p className={ style.translate } key={ index } onClick={ handleClickWords }>{ value }</p>
                       ) }
                   </div>

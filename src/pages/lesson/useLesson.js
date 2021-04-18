@@ -36,7 +36,6 @@ export const useLesson = () => {
   const getLessons = useCallback(async () => {
     try {
       const getDataLessons = await request('/api/lessons', 'POST', { id, ...parameters, userId })
-      console.log(getDataLessons)
       setDataLessons(getDataLessons.getData)
       setStr(getDataLessons.str)
       setParameters(prev => { return { ...prev, count: getDataLessons.count } })

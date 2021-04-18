@@ -7,7 +7,7 @@ import { ToastContainer } from 'react-toastify'
 import { useExercise } from '../useExercise'
 
 const CardSentence = (props) => {
-  const { rule, sentence, sentenceAnswer } = props
+  const { rule, sentence } = props
   const { answer, handleClickSentence, setAnswer } = useExercise()
 
   return (
@@ -31,7 +31,6 @@ const CardSentence = (props) => {
                   />
                   <button className={style.buttonSentence} onClick={handleClickSentence} type='button'>Проверить</button>
               </div>
-              <span>{sentenceAnswer}</span>
           </div>
       </>
   )
@@ -39,7 +38,6 @@ const CardSentence = (props) => {
 
 CardSentence.propTypes = {
   rule: PropTypes.string,
-  sentence: PropTypes.string,
-  sentenceAnswer: PropTypes.string
+  sentence: PropTypes.string
 }
 export default CardSentence

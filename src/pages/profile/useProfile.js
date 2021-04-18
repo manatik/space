@@ -54,7 +54,7 @@ export const useProfile = () => {
     }
     // eslint-disable-next-line
   }, [])
-  console.log(progress)
+
   useEffect(() => {
     if (data) {
       getProfileData().then()

@@ -66,6 +66,7 @@
 .userImg {
     filter: invert(0%) sepia(1%) saturate(4%) hue-rotate(320deg) brightness(97%) contrast(104%);
     margin-left: 10px;
+    width: 30px;
 }
 
 @media screen and (max-width: 600px) {
