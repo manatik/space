@@ -15,13 +15,18 @@ import profile from '../../assets/user.svg'
 import logo from '../../assets/logo.png'
 
 const Profile = () => {
-  const { data, editProfile, handleChange, loading, progress, saveProfile, setToggle, toggle } = useProfile() || {}
+  const {
+    data, editProfile, handleChange,
+    loading, progress, saveProfile,
+    setToggle, toggle
+  } = useProfile() || {}
 
   if (loading && !data) {
     return <Loader/>
   }
+
   return (
-      <>
+      <div>
           <ToastContainer/>
           <div className={ style.main }>
               <Hamburger/>
@@ -85,9 +90,8 @@ const Profile = () => {
             </div>
           </div>
         </div>
-
       </div>
-    </>
+    </div>
   )
 }
 export default Profile

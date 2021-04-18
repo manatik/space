@@ -18,6 +18,12 @@ export const ContextProvider = (props) => {
   const [dataLessons, setDataLessons] = useState([])
   const [index, setIndex] = useState(0)
 
+  const linkLevels = [
+    { id: '1', title: 'Elementary' },
+    { id: '2', title: 'Pre-Intermediate' },
+    { id: '3', title: 'Intermediate' },
+    { id: '4', title: 'Upper-Intermediate' }
+  ]
   // объект для импорта
   const variablesContext = {
     authenticate: {
@@ -34,6 +40,7 @@ export const ContextProvider = (props) => {
       index,
       setIndex
     },
+    linkLevels,
     modals: {
       isModalLogin,
       isModalReg,

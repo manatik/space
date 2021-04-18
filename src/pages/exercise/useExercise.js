@@ -1,7 +1,8 @@
-
+// packages
 import { useParams, useHistory } from 'react-router-dom'
 import { useCallback, useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
+// hooks
 import { useAuth } from '../../hooks/auth.hook'
 import { useContextProvider } from '../../hooks/context'
 import { useHttp } from '../../api/api'
@@ -38,8 +39,9 @@ export const useExercise = () => {
       setIndex(index + 1)
     }
     if (index === (arrWords.length - 1)) {
-      progressUser(1, 0).then(() => history.goBack())
-      setIndex(0)
+      progressUser(1, 0)
+        .then(() => history.goBack())
+        .then(() => setIndex(0))
     }
   }
 
@@ -54,8 +56,9 @@ export const useExercise = () => {
       setAnswer('')
     }
     if (index === arrSentence.length - 1) {
-      progressUser(0, 1).then(() => history.goBack())
-      setIndex(0)
+      progressUser(0, 1)
+        .then(() => history.goBack())
+        .then(() => setIndex(0))
       setAnswer('')
     }
   }

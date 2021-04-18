@@ -1,10 +1,14 @@
+// packages
 import React from 'react'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
-import style from './words.module.css'
 import { ToastContainer } from 'react-toastify'
+// components
 import Loader from '../../../components/loader/Loader'
+// hooks
 import { useExercise } from '../useExercise'
+// styles
+import style from './words.module.css'
 
 const CardWord = ({ alt, image, translate, word }) => {
   const { handleClickWords, random } = useExercise()
@@ -14,7 +18,7 @@ const CardWord = ({ alt, image, translate, word }) => {
   }
 
   return (
-      <>
+      <div>
           <ToastContainer/>
           <div className={ style.content }>
               <div className={ style.divImageWord }>
@@ -32,7 +36,7 @@ const CardWord = ({ alt, image, translate, word }) => {
                   </div>
               </div>
           </div>
-      </>
+      </div>
   )
 }
 
@@ -42,4 +46,5 @@ CardWord.propTypes = {
   translate: PropTypes.array,
   word: PropTypes.string
 }
+
 export default CardWord

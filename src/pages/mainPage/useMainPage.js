@@ -2,11 +2,11 @@
 import { useState } from 'react'
 
 const useMainPage = () => {
-  const [text, setText] = useState('level 1')
+  const [text, setText] = useState('')
 
   const lishki = [
     {
-      click: 'level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1level 1',
+      click: 'level 1',
       id: 1,
       name: 'Elementary'
     },

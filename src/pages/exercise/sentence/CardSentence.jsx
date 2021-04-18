@@ -1,17 +1,18 @@
 // packages
 import React from 'react'
 import PropTypes from 'prop-types'
+import { ToastContainer } from 'react-toastify'
+// hooks
+import { useExercise } from '../useExercise'
 // style
 import style from './sentence.module.css'
-import { ToastContainer } from 'react-toastify'
-import { useExercise } from '../useExercise'
 
 const CardSentence = (props) => {
   const { rule, sentence } = props
   const { answer, handleClickSentence, setAnswer } = useExercise()
 
   return (
-      <>
+      <div>
           <ToastContainer/>
           <div className={style.content}>
               <div className={style.rules}>
@@ -32,7 +33,7 @@ const CardSentence = (props) => {
                   <button className={style.buttonSentence} onClick={handleClickSentence} type='button'>Проверить</button>
               </div>
           </div>
-      </>
+      </div>
   )
 }
 
@@ -40,4 +41,5 @@ CardSentence.propTypes = {
   rule: PropTypes.string,
   sentence: PropTypes.string
 }
+
 export default CardSentence

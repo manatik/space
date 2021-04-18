@@ -15,19 +15,22 @@ const lessonPath = '/programEng/:level'
 const exercisePath = '/programEng/:level/exercise/:number'
 const wordsPath = '/programEng/:level/exercise/:number/words'
 const sentencePath = '/programEng/:level/exercise/:number/sentence'
+const programEngPath = '/programEng'
+const aboutPath = '/about'
+const profilePath = '/profile'
 
 const router = (isAuthenticated) => {
   if (isAuthenticated) {
     return (
         <Switch>
             <Route component={MainPage} exact path={'/'}/>
-            <Route component={ProgramEng} exact path={'/programEng'}/>
-            <Route component={About} exact path={'/about'}/>
+            <Route component={ProgramEng} exact path={programEngPath}/>
+            <Route component={About} exact path={aboutPath}/>
             <Route component={Lesson} exact path={lessonPath}/>
             <Route component={Exercise} exact path={exercisePath}/>
             <Route component={Words} exact path={wordsPath}/>
             <Route component={Sentence} exact path={sentencePath}/>
-            <Route component={Profile} exact path={'/profile'}/>
+            <Route component={Profile} exact path={profilePath}/>
             <Redirect to={'/'}/>
         </Switch>
     )
@@ -35,7 +38,7 @@ const router = (isAuthenticated) => {
   return (
       <Switch>
           <Route component={MainPage} exact path={'/'}/>
-          <Route component={About} exact path={'/about'}/>
+          <Route component={About} exact path={aboutPath}/>
           <Redirect to={'/'}/>
       </Switch>
   )

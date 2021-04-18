@@ -6,11 +6,11 @@ import cn from 'classnames'
 // components
 import Hamburger from '../../components/hamburger/Hamburger'
 import Loader from '../../components/loader/Loader'
+import ImageLoader from '../../components/imageLoader/ImageLoader'
 // hooks
 import { useLesson } from './useLesson'
 // styles
 import style from './lesson.module.css'
-import ImageLoader from '../../components/imageLoader/ImageLoader'
 // pictures
 import arrow from '../../assets/next.png'
 import star from '../../assets/star.png'

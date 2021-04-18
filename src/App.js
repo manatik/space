@@ -2,12 +2,12 @@
 import React from 'react'
 // components
 import Router from './routing/router'
+import Loader from './components/loader/Loader'
 // hooks
 import { useContextProvider } from './hooks/context'
+import { useAuth } from './hooks/auth.hook'
 // styles
 import style from './app.module.css'
-import Loader from './components/loader/Loader'
-import { useAuth } from './hooks/auth.hook'
 
 const App = () => {
   const { ready } = useAuth()
@@ -15,7 +15,7 @@ const App = () => {
   const routes = Router(isAuthenticated)
 
   if (!ready) {
-    return <><Loader/></>
+    return <Loader/>
   }
 
   return (

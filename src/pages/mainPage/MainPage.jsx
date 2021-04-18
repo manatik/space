@@ -23,7 +23,7 @@ const MainPage = () => {
   } = useContextProvider() || {}
 
   return (
-      <>
+      <div>
           <div className={ style.mainPage }>
               <Header/>
               <ToastContainer/>
@@ -62,7 +62,7 @@ const MainPage = () => {
       <Modal isClose={ setIsModalLogin } isOpen={ isModalLogin }>
         <LoginModal/>
       </Modal>
-    </>
+    </div>
   )
 }
 export default MainPage

@@ -3,7 +3,6 @@ import { useCallback, useEffect, useState } from 'react'
 // hooks
 import { useHttp } from '../../api/api'
 import { useParams } from 'react-router-dom'
-// styles
 import { useContextProvider } from '../../hooks/context'
 
 export const useLesson = () => {

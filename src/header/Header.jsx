@@ -26,6 +26,7 @@ const Header = () => {
     logout()
     setIsAuthenticated(false)
   }
+
   return (
       <div className={style.headerDiv}>
           <div className={style.header}>

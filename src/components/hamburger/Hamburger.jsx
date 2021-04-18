@@ -5,6 +5,7 @@ import cn from 'classnames'
 import { NavLink, Link } from 'react-router-dom'
 // hooks
 import useHamburger from './useHamburger'
+import { useContextProvider } from '../../hooks/context'
 // styles
 import style from './hamburger.module.css'
 // pictures
@@ -16,25 +17,7 @@ const Hamburger = () => {
     openedBurgerMenu,
     setOpenedBurgerMenu
   } = useHamburger()
-
-  const data = [
-    {
-      id: '1',
-      title: 'Elementary'
-    },
-    {
-      id: '2',
-      title: 'Pre-Intermediate'
-    },
-    {
-      id: '3',
-      title: 'Intermediate'
-    },
-    {
-      id: '4',
-      title: 'Upper-Intermediate'
-    }
-  ]
+  const { linkLevels } = useContextProvider()
 
   return (
       <>
@@ -58,7 +41,7 @@ const Hamburger = () => {
               <div className={ style.dropDown }>
                   <span className={style.programSpan}>Программа и методика</span>
                   <div className={ style.dropDownContent }>
-                      {data.map((link, index) =>
+                      {linkLevels.map((link, index) =>
                           <Link
                               className={ style.navLink }
                               id={link.id}

@@ -33,67 +33,66 @@ const RegistrationModal = () => {
     } catch (e) {
     }
   }
-  return (
-      <>
-          <div className={styles.inputs}>
-              <label className={styles.label} htmlFor="name">Имя:</label>
-              <input
-                  className={styles.input}
-                  id="name"
-                  name="name"
-                  onChange={handleChange}
-                  placeholder={'Имя-Ник'}
-              />
-              <label className={styles.label} htmlFor="email">E-mail:</label>
-              <input
-                  className={styles.input}
-                  name="email"
-                  onChange={handleChange}
-                  placeholder="E-mail"
-                  type="email"
-              />
-              <label className={styles.label} htmlFor="tel">Номер телефона:</label>
-              <input
-                  className={styles.input}
-                  name="phone"
-                  onChange={handleChange}
-                  pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-                  placeholder={'Телефон'}
-                  type="tel"
-              />
-              <label className={styles.label} htmlFor="password">Пароль:</label>
-              <input
-                  className={styles.input}
-                  name="password"
-                  onChange={handleChange}
-                  placeholder={'Пароль'}
-                  type="password"
-              />
 
+  return (
+      <div className={ styles.inputs }>
+          <label className={ styles.label } htmlFor="name">Имя:</label>
+          <input
+              className={ styles.input }
+              id="name"
+              name="name"
+              onChange={ handleChange }
+              placeholder={ 'Имя-Ник' }
+          />
+          <label className={ styles.label } htmlFor="email">E-mail:</label>
+          <input
+              className={ styles.input }
+              name="email"
+              onChange={ handleChange }
+              placeholder="E-mail"
+              type="email"
+          />
+          <label className={ styles.label } htmlFor="tel">Номер телефона:</label>
+          <input
+              className={ styles.input }
+              name="phone"
+              onChange={ handleChange }
+              pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+              placeholder={ 'Телефон' }
+              type="tel"
+          />
+          <label className={ styles.label } htmlFor="password">Пароль:</label>
+          <input
+              className={ styles.input }
+              name="password"
+              onChange={ handleChange }
+              placeholder={ 'Пароль' }
+              type="password"
+          />
+
+          <button
+              className={ styles.btn }
+              disabled={ loading }
+              onClick={ handleClick }
+              type='button'
+          >
+              Зарегистрироваться
+          </button>
+
+          <p className={ styles.txtEnter }>
+              У вас уже есть аккаунт?
               <button
-                  className={styles.btn}
-                  disabled={loading}
-                  onClick={handleClick}
+                  className={ styles.btnRedirect }
+                  onClick={ () => {
+                    setIsModalReg(false)
+                    setIsModalLogin(true)
+                  } }
                   type='button'
               >
-                  Зарегистрироваться
+                  Войти
               </button>
-
-              <p className={styles.txtEnter}>
-                  У вас уже есть аккаунт?
-                  <button
-                      className={styles.btnRedirect}
-                      onClick={() => {
-                        setIsModalReg(false)
-                        setIsModalLogin(true)
-                      }}
-                      type='button'
-                  >
-                      Войти
-                  </button>
-              </p>
-          </div>
-      </>
+          </p>
+      </div>
   )
 }
 
