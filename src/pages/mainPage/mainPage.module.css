@@ -3,9 +3,10 @@
 }
 
 .mainPage {
-    background: url('https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/MainPage%2FbackgroundMainPage.svg?alt=media&token=2536df9b-d0a7-42f9-a092-7fa8dff26758') no-repeat left / cover;
+    background: url('../../assets/backgroundMainPage.svg') no-repeat left / cover;
     font-family: 'Montserrat', sans-serif;
     height: 100vh;
+    width: 100%;
     overflow: auto;
 }
 
@@ -13,7 +14,7 @@
     display: grid;
     grid-template-areas: "offer image";
     grid-template-columns: 2fr 1fr;
-    max-width: 1300px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -41,7 +42,7 @@
     width: 40%;
     overflow: hidden;
     z-index: 1;
-    margin: 8% 0 2% 40%;
+    margin: 120px 0 2% 40%;
 }
 
 @media screen and (max-width: 600px) {

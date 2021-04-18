@@ -1,5 +1,5 @@
 .main {
-    background: url('https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Exercise%2FbackgroundExercise.svg?alt=media&token=2867352c-5c75-4a21-9fc3-4e34d7e04e89') no-repeat left top / cover;
+    background: url('../../assets/backgroundExercise.svg') no-repeat left top / cover;
     height: 100vh;
 }
 

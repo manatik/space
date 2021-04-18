@@ -11,8 +11,8 @@ import { useProfile } from './useProfile'
 // styles
 import style from './profile.module.css'
 // pictures
-const logo = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/logoCabinet.png?alt=media&token=f1190f8b-a1a4-4fe3-93d5-be801d12dfd6'
-const profile = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/user.svg?alt=media&token=3ae3631f-334e-4647-aabd-602eda12b959'
+import profile from '../../assets/user.svg'
+import logo from '../../assets/logo.png'
 
 const Profile = () => {
   const { data, editProfile, handleChange, loading, progress, saveProfile, setToggle, toggle } = useProfile() || {}

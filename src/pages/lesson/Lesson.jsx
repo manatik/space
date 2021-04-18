@@ -12,9 +12,9 @@ import { useLesson } from './useLesson'
 import style from './lesson.module.css'
 import ImageLoader from '../../components/imageLoader/ImageLoader'
 // pictures
-const arrow = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Lesson%2Fnext.png?alt=media&token=f61495ce-8bbb-444d-9010-3fd62d9156fd'
-const star = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Lesson%2Fstar.png?alt=media&token=aa4b06fd-9759-4a8c-b54c-7230872e4b22'
-const defaultImage = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/zatichka.png?alt=media&token=b61b3b1d-3fbb-4575-8c3b-85e5aa871a1d'
+import arrow from '../../assets/next.png'
+import star from '../../assets/star.png'
+import defaultImage from '../../assets/zatichka.png'
 
 const Lesson = () => {
   const { dataLessons, loading, nextLessons, parameters, prevLessons, str } = useLesson()

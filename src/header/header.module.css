@@ -1,5 +1,5 @@
 .headerDiv {
-    max-width: 1300px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -40,7 +40,11 @@
     font-size: 30px;
     font-weight: bold;
     color: black;
-    margin-left: 15px;
+    margin-left: 35px;
+}
+
+.link:nth-child(1) {
+    margin-left: 0;
 }
 
 .enter {

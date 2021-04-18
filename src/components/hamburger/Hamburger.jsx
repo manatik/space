@@ -7,8 +7,8 @@ import { NavLink, Link } from 'react-router-dom'
 import useHamburger from './useHamburger'
 // styles
 import style from './hamburger.module.css'
-
-const user = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/user.svg?alt=media&token=3ae3631f-334e-4647-aabd-602eda12b959'
+// pictures
+import user from '../../assets/user.svg'
 
 const Hamburger = () => {
   const {

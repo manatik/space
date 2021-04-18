@@ -1,5 +1,5 @@
 .main {
-    background: url('https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Cabinet.svg?alt=media&token=e8847606-3c49-44eb-bec0-d51d7afc0fa3') no-repeat bottom / cover;
+    background: url('../../assets/Cabinet.svg') no-repeat bottom / cover;
     height: 100vh;
     overflow: auto;
 }

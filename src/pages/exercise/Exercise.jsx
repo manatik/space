@@ -6,8 +6,8 @@ import Hamburger from '../../components/hamburger/Hamburger'
 // styles
 import style from './exercise.module.css'
 // pictures
-const word = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Exercise%2FimgWords.png?alt=media&token=88d7d96e-3ec9-43ae-9dd6-92a17e035824'
-const sen = 'https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Exercise%2FimgSentence.png?alt=media&token=14f93026-d6e0-418b-9072-9f66510adb48'
+import word from '../../assets/imgWords.png'
+import sentence from '../../assets/imgSentence.png'
 
 const Exercise = () => {
   const { level, number } = useParams()
@@ -25,7 +25,7 @@ const Exercise = () => {
                   </div>
                   <div className={style.sentence}>
                       <NavLink className={style.link} to={`/programEng/${level}/exercise/${number}/sentence`}>
-                          <img alt={'logo book'} className={style.img} src={sen}/>
+                          <img alt={'logo book'} className={style.img} src={sentence}/>
                           <p className={style.textField}>Предложения</p>
                       </NavLink>
                   </div>

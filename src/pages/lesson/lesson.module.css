@@ -1,5 +1,5 @@
 .main {
-    background: url('https://firebasestorage.googleapis.com/v0/b/space-eng.appspot.com/o/Lesson%2FbackgroundLesson.svg?alt=media&token=df18a198-c937-4430-a301-ed0224014313') no-repeat left top / cover;
+    background: url('../../assets/backgroundLesson.svg') no-repeat left top / cover;
 }
 
 .lessonField {
@@ -89,7 +89,7 @@
 
 .backImg {
     height: 200px;
-    width: 200px;
+    width: 250px;
     border-radius: 10px;
 }
 
