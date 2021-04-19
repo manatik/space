@@ -17,18 +17,14 @@ export const useExercise = () => {
   const [arrWords, setArrWords] = useState([])
   const [arrSentence, setArrSentence] = useState([])
   const [answer, setAnswer] = useState('')
+  const [passExercise, setPassExercise] = useState(false)
 
-  function random (arr) {
-    let j, temp
-    for (let i = arr.length - 1; i > 0; i--) {
-      j = Math.floor(Math.random() * (i + 1))
-      temp = arr[j]
-      arr[j] = arr[i]
-      arr[i] = temp
-    }
-    return arr
+  const hidePassModal = () => {
+    setPassExercise(false)
+    progressUser(1, 0)
+      .then(() => history.goBack())
+      .then(() => setIndex(0))
   }
-
   const handleClickWords = (e) => {
     const value = e.target.outerText
     if (value === arrWords[index].translate[0]) {
@@ -39,9 +35,7 @@ export const useExercise = () => {
       setIndex(index + 1)
     }
     if (index === (arrWords.length - 1)) {
-      progressUser(1, 0)
-        .then(() => history.goBack())
-        .then(() => setIndex(0))
+      setPassExercise(true)
     }
   }
 
@@ -92,5 +86,31 @@ export const useExercise = () => {
     // eslint-disable-next-line
   }, [number, level])
 
-  return { answer, arrSentence, arrWords, handleClickSentence, handleClickWords, index, loading, random, setAnswer, setIndex }
+  const random = (arr) => {
+    if (!arr) { return }
+    let j, temp
+    for (let i = arr.length - 1; i > 0; i--) {
+      j = Math.floor(Math.random() * (i + 1))
+      temp = arr[j]
+      arr[j] = arr[i]
+      arr[i] = temp
+    }
+    return arr
+  }
+
+  return {
+    answer,
+    arrSentence,
+    arrWords,
+    handleClickSentence,
+    handleClickWords,
+    hidePassModal,
+    index,
+    loading,
+    passExercise,
+    random,
+    setAnswer,
+    setIndex,
+    setPassExercise
+  }
 }

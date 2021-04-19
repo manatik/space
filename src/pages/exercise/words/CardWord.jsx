@@ -5,21 +5,23 @@ import _ from 'lodash'
 import { ToastContainer } from 'react-toastify'
 // components
 import Loader from '../../../components/loader/Loader'
+import PassExercise from '../../../modals/PassExercise'
 // hooks
 import { useExercise } from '../useExercise'
 // styles
 import style from './words.module.css'
 
 const CardWord = ({ alt, image, translate, word }) => {
-  const { handleClickWords, random } = useExercise()
+  const { handleClickWords, passExercise, random } = useExercise()
 
-  if (!translate) {
-    return <><Loader/></>
+  if (!translate && !passExercise) {
+    return <Loader/>
   }
 
   return (
       <div>
           <ToastContainer/>
+          {passExercise && <PassExercise/>}
           <div className={ style.content }>
               <div className={ style.divImageWord }>
                   <img
