@@ -28,7 +28,7 @@ const MainPageProgram = () => {
                   </ol>
               </div>
               <div className={ style.listText }>
-                  { text }
+                  <p style={{ textAlign: 'start', whiteSpace: 'pre-wrap' }}>{ text }</p>
               </div>
           </div>
       </div>

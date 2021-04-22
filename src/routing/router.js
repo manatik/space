@@ -10,6 +10,7 @@ import Exercise from '../pages/exercise/Exercise'
 import Words from '../pages/exercise/words/Words'
 import Sentence from '../pages/exercise/sentence/Sentence'
 import Profile from '../pages/profile/Profile'
+import MainChat from '../mainChat/MainChat'
 // paths
 const lessonPath = '/programEng/:level'
 const exercisePath = '/programEng/:level/exercise/:number'
@@ -18,6 +19,7 @@ const sentencePath = '/programEng/:level/exercise/:number/sentence'
 const programEngPath = '/programEng'
 const aboutPath = '/about'
 const profilePath = '/profile'
+const mainChat = '/chat'
 
 const router = (isAuthenticated) => {
   if (isAuthenticated) {
@@ -31,6 +33,7 @@ const router = (isAuthenticated) => {
             <Route component={Words} exact path={wordsPath}/>
             <Route component={Sentence} exact path={sentencePath}/>
             <Route component={Profile} exact path={profilePath}/>
+            <Route component={MainChat} exact path={mainChat}/>
             <Redirect to={'/'}/>
         </Switch>
     )

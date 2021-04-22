@@ -39,7 +39,7 @@ const Hamburger = () => {
                   Главная
               </NavLink>
               <div className={ style.dropDown }>
-                  <span className={style.programSpan}>Программа и методика</span>
+                  <span className={style.programSpan}>Уровень английского</span>
                   <div className={ style.dropDownContent }>
                       {linkLevels.map((link, index) =>
                           <Link

@@ -6,6 +6,7 @@ import _ from 'lodash'
 // components
 import Hamburger from '../../components/hamburger/Hamburger'
 import Loader from '../../components/loader/Loader'
+import DatePicker from '../../components/datePicker/DatePicker'
 // hooks
 import { useProfile } from './useProfile'
 // styles
@@ -39,6 +40,9 @@ const Profile = () => {
                           </span>
                           <span className={ style.pageProfile } onClick={ editProfile }>
                               <NavLink className={ style.navLink } to='/profile'>Редактировать профиль</NavLink>
+                          </span>
+                          <span className={ style.pageProfile }>
+                              <NavLink className={ style.navLink } to='/chat'>Общий чат</NavLink>
                           </span>
                       </div>
                   </div>
@@ -76,7 +80,7 @@ const Profile = () => {
             </div>
             <div className={ style.progress }>
               <div className={ style.progressField1 }>
-                Тут наверно будет дата пикер
+                <DatePicker/>
               </div>
               <div className={ style.progressField2 }>
                 <h1 className={ style.lvls }>Прогресс</h1>

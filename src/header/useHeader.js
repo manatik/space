@@ -7,7 +7,7 @@ const useHeader = () => {
     },
     {
       id: 2,
-      name: 'Программа и методика',
+      name: 'Выбрать уровень',
       to: '/programEng'
     },
     {

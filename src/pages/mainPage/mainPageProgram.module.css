@@ -46,9 +46,10 @@
 .listText {
   grid-area: listText1;
   background: #8287F2;
-  border-radius: 68px;
+  border-radius: 38px;
   padding: 30px;
   text-align: center;
+  font-size: 16px;
 }
 
 @media screen and (max-width: 600px) {
