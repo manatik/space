@@ -1,11 +1,10 @@
-import React from 'react'
+/* eslint-disable */
+import { ChatRoom } from './components/ChatRoom/ChatRoom'
+import style from './chat.module.css'
 
 const MainChat = () => {
-  return (
-      <div>
-          чатик
-      </div>
-  )
+
+  return (<ChatRoom/>)
 }
 
 export default MainChat

@@ -19,7 +19,7 @@ const App = () => {
   }
 
   return (
-      <div className={style}>
+      <div className={style.main}>
           {routes}
       </div>
   )

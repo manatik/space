@@ -1,6 +1,6 @@
 // packages
 import { useCallback, useState } from 'react'
-
+// https://serverspace.herokuapp.com
 export const useHttp = () => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
@@ -11,7 +11,7 @@ export const useHttp = () => {
         body = JSON.stringify(body)
         headers['Content-Type'] = 'application/json'
       }
-      const response = await fetch(`https://serverspace.herokuapp.com${url}`, { body, headers, method })
+      const response = await fetch(`http://localhost:9000${url}`, { body, headers, method })
       const data = await response.json()
       if (!response.ok) {
         throw new Error(data.message || 'Что-то пошло не так')

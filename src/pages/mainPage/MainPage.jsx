@@ -24,42 +24,42 @@ const MainPage = () => {
 
   return (
       <div>
-          <div className={ style.mainPage }>
+          <div className={style.mainPage}>
               <Header/>
               <ToastContainer/>
-              <div className={ style.section }>
-                  <div className={ style.offer }>
+              <div className={style.section}>
+                  <div className={style.offer}>
                       <p>Приложение, созданное для наиболее легкого и простого изучения английского языка</p>
-                      <div style={ { marginTop: '30px' } }>
-                          { !isAuthenticated
-                            ? <span onClick={ () => setIsModalReg(true) }>
+                      <div style={{ marginTop: '30px' }}>
+                          {!isAuthenticated
+                            ? <span onClick={() => setIsModalReg(true)}>
                                 <NavLink
-                                    className={ style.btn }
-                                    to={ '/' }
+                                    className={style.btn}
+                                    to={'/'}
                                 >
                                     Начать обучение
-                                    {/* eslint-disable */ }
+                                    {/* eslint-disable */}
                                 </NavLink>
                               </span>
 
                 : <NavLink
-                  className={ style.btn }
-                  to={ '/programEng' }
+                  className={style.btn}
+                  to={'/programEng'}
                 >
                   Выбери уровень!
-                </NavLink> }
+                </NavLink>}
             </div>
           </div>
-          <img alt={ 'iodine' } className={ style.iodineMainPage } src={ iodine }/>
+          <img alt={'iodine'} className={style.iodineMainPage} src={iodine}/>
         </div>
       </div>
       <MainPageProgram/>
 
-      <Modal isClose={ setIsModalReg } isOpen={ isModalReg }>
+      <Modal isClose={setIsModalReg} isOpen={isModalReg}>
         <RegistrationModal/>
       </Modal>
 
-      <Modal isClose={ setIsModalLogin } isOpen={ isModalLogin }>
+      <Modal isClose={setIsModalLogin} isOpen={isModalLogin}>
         <LoginModal/>
       </Modal>
     </div>
