@@ -3,8 +3,11 @@ import { useRef, useEffect } from 'react'
 // components
 import { MessageListItem } from './MessageListItem'
 import style from '../../../chat.module.css'
+import {useProfile} from "../../../../pages/profile/useProfile";
+import cn from "classnames";
 
 export const MessageList = ({ messages, removeMessage }) => {
+  const { data } = useProfile() || {}
   const messagesEndRef = useRef(null)
 
   useEffect(() => {
@@ -17,11 +20,13 @@ export const MessageList = ({ messages, removeMessage }) => {
     <>
       <div className={style.messageFormMain}>
         {messages.map((msg) => (
+          <div key={msg.messageId} className={cn(style.messageItem, data.name == msg.senderName && style.messageItemAuthor)}>
           <MessageListItem
-            key={msg.messageId}
+            user={data.name}
             msg={msg}
             removeMessage={removeMessage}
           />
+          </div>
         ))}
         <span ref={messagesEndRef}/>
       </div>

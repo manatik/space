@@ -56,7 +56,7 @@ export const useChat = (roomId) => {
   }
 
   useBeforeUnload(() => {
-    socketRef.current.emit('user:leave', userId)
+    socketRef.current.emit('user:leave', username)
   })
 
   return {users, messages, sendMessage, removeMessage}

@@ -2,7 +2,9 @@
 import { useState } from 'react'
 // emoji
 import { Picker } from 'emoji-mart'
+import 'emoji-mart/css/emoji-mart.css'
 import style from '../../../chat.module.css'
+
 export const MessageForm = ({ username, sendMessage }) => {
   const [text, setText] = useState('')
   const [showEmoji, setShowEmoji] = useState(false)
@@ -31,7 +33,10 @@ export const MessageForm = ({ username, sendMessage }) => {
   return (
     <>
         <div className={style.inputForm}>
-          <button type='button' onClick={handleEmojiShow}>
+          <div className={style.emoji}>
+            {showEmoji && <Picker onSelect={handleEmojiSelect} emojiSize={20} />}
+          </div>
+          <button type='button' onClick={handleEmojiShow} className={style.sendBtn}>
             смайлики
           </button>
           <input
@@ -45,7 +50,6 @@ export const MessageForm = ({ username, sendMessage }) => {
             отправить
           </button>
         </div>
-      {showEmoji && <Picker onSelect={handleEmojiSelect} emojiSize={20} />}
     </>
   )
 }
